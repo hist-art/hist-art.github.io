@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Тесты - Искусство Беларуси XIX-XX вв.</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        .test-block {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(3px);
+            padding: 30px 35px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            margin-bottom: 30px;
+        }
+
+        .question {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(139, 42, 61, 0.15);
+        }
+
+        .question:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .question p {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            font-size: 17px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .question label {
+            display: block;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            font-size: 15px;
+            color: #444;
+            padding: 6px 0 6px 30px;
+            cursor: pointer;
+            position: relative;
+            transition: 0.2s;
+        }
+
+        .question label:hover {
+            color: var(--color-accent);
+        }
+
+        .question input[type="radio"] {
+            position: absolute;
+            margin-left: -25px;
+            margin-top: 4px;
+            accent-color: var(--color-accent);
+            transform: scale(1.1);
+            cursor: pointer;
+        }
+
+        .test-btn {
+            background: var(--color-accent);
+            color: #fff;
+            border: none;
+            padding: 12px 40px;
+            font-size: 18px;
+            font-family: 'Georgia', serif;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.25s;
+            margin-top: 10px;
+            margin-right: 12px;
+        }
+
+        .test-btn:hover {
+            background: #6e1f30;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 42, 61, 0.25);
+        }
+
+        .test-btn.reset {
+            background: #888;
+        }
+
+        .test-btn.reset:hover {
+            background: #555;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-family: 'Georgia', serif;
+            font-size: 20px;
+            color: var(--color-accent);
+            font-weight: 600;
+        }
+
+        .test-note {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            font-size: 14px;
+            color: #666;
+            margin-top: 20px;
+            font-style: italic;
+        }
+
+        @media (max-width: 600px) {
+            .test-block { padding: 18px 16px; }
+            .question p { font-size: 15px; }
+            .question label { font-size: 14px; padding-left: 25px; }
+            .question input[type="radio"] { margin-left: -20px; }
+            .test-btn { width: 100%; padding: 14px; font-size: 16px; margin-right: 0; margin-bottom: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page-bg"></div>
+
+    <header>
+        <h1>Искусство Беларуси XIX-XX вв.</h1>
+        <nav>
+            <a href="index.html">Главная</a>
+            <div class="dropdown">
+                <span class="dropbtn">Живопись</span>
+                <div class="dropdown-content">
+                    <a href="painting-19.html">XIX век</a>
+                    <a href="painting-20.html">XX век</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <span class="dropbtn">Театр</span>
+                <div class="dropdown-content">
+                    <a href="theater-19.html">XIX век</a>
+                    <a href="theater-20.html">XX век</a>
+                </div>
+            </div>
+            <a href="cinema.html">Кино</a>
+            <a href="literature.html">Литература</a>
+            <a href="music.html">Музыка</a>
+            <a href="sources.html">Источники</a>
+            <a href="tests.html" class="active">Тесты</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- ===== ВИКТОРИНА 1: КИНО ===== -->
+        <div class="test-block">
+            <h2 style="font-family:'Georgia',serif; color:var(--color-accent); font-size:28px; margin-bottom:6px;">Викторина по кино</h2>
+            <p style="font-family:'Segoe UI', Arial, sans-serif; font-size:16px; color:#555; margin-bottom:20px;">
+                Проверь свои знания о белорусском кино XX века.
+            </p>
+
+            <form id="quizCinema">
+                <div class="question" data-correct="3">
+                    <p>1. Какой фильм считается первым белорусским художественным фильмом?</p>
+                    <label><input type="radio" name="c1"> «Красные листья»</label>
+                    <label><input type="radio" name="c1"> «Часы остановились в полночь»</label>
+                    <label><input type="radio" name="c1"> «Лесная быль»</label>
+                    <label><input type="radio" name="c1"> «Альпийская баллада»</label>
+                </div>
+                <div class="question" data-correct="1">
+                    <p>2. Фильм «Красные листья» основан на событиях, происходивших в:</p>
+                    <label><input type="radio" name="c2"> Западной Белоруссии в 1930-х годах</label>
+                    <label><input type="radio" name="c2"> Минске в годы оккупации</label>
+                    <label><input type="radio" name="c2"> Альпах во время войны</label>
+                    <label><input type="radio" name="c2"> Белорусских лесах в 1943 году</label>
+                </div>
+                <div class="question" data-correct="3">
+                    <p>3. Кто был режиссёром первого белорусского художественного фильма «Лесная быль»?</p>
+                    <label><input type="radio" name="c3"> Владимир Корш-Саблин</label>
+                    <label><input type="radio" name="c3"> Николай Фигуровский</label>
+                    <label><input type="radio" name="c3"> Юрий Тарич</label>
+                    <label><input type="radio" name="c3"> Борис Степанов</label>
+                </div>
+                <div class="question" data-correct="2">
+                    <p>4. В каком городе происходят события фильма «Часы остановились в полночь»?</p>
+                    <label><input type="radio" name="c4"> В Бресте</label>
+                    <label><input type="radio" name="c4"> В Минске</label>
+                    <label><input type="radio" name="c4"> В Витебске</label>
+                    <label><input type="radio" name="c4"> В Гродно</label>
+                </div>
+                <div class="question" data-correct="3">
+                    <p>5. Фильм «Альпийская баллада» снят по одноимённому произведению:</p>
+                    <label><input type="radio" name="c5"> Янки Купалы</label>
+                    <label><input type="radio" name="c5"> Якуба Коласа</label>
+                    <label><input type="radio" name="c5"> Василя Быкова</label>
+                    <label><input type="radio" name="c5"> Алеся Адамовича</label>
+                </div>
+                <div class="question" data-correct="1">
+                    <p>6. Кто был прототипом главного героя фильма «Красные листья»?</p>
+                    <label><input type="radio" name="c6"> Сергей Притыцкий</label>
+                    <label><input type="radio" name="c6"> Александр Червяков</label>
+                    <label><input type="radio" name="c6"> Вильгельм Кнорин</label>
+                    <label><input type="radio" name="c6"> Иосиф Адамович</label>
+                </div>
+                <div class="question" data-correct="2">
+                    <p>7. В каком году вышел фильм «Лесная быль»?</p>
+                    <label><input type="radio" name="c7"> 1930</label>
+                    <label><input type="radio" name="c7"> 1926</label>
+                    <label><input type="radio" name="c7"> 1958</label>
+                    <label><input type="radio" name="c7"> 1949</label>
+                </div>
+                <div class="question" data-correct="1">
+                    <p>8. Какое событие лежит в основе сюжета фильма «Часы остановились в полночь»?</p>
+                    <label><input type="radio" name="c8"> Уничтожение гауляйтера Кубе минскими подпольщиками</label>
+                    <label><input type="radio" name="c8"> Партизанский рейд в тыл врага</label>
+                    <label><input type="radio" name="c8"> Восстание в Западной Белоруссии</label>
+                    <label><input type="radio" name="c8"> Побег из плена в Альпах</label>
+                </div>
+                <div class="question" data-correct="2">
+                    <p>9. О чём фильм «Альпийская баллада»?</p>
+                    <label><input type="radio" name="c9"> О сражении в Альпах</label>
+                    <label><input type="radio" name="c9"> О побеге из плена и любви советского солдата и итальянской девушки</label>
+                    <label><input type="radio" name="c9"> О работе контрразведки СМЕРШ</label>
+                    <label><input type="radio" name="c9"> О партизанском движении в Беларуси</label>
+                </div>
+                <div class="question" data-correct="1">
+                    <p>10. Кто был режиссёром фильма «Красные листья»?</p>
+                    <label><input type="radio" name="c10"> Владимир Корш-Саблин</label>
+                    <label><input type="radio" name="c10"> Юрий Тарич</label>
+                    <label><input type="radio" name="c10"> Борис Степанов</label>
+                    <label><input type="radio" name="c10"> Николай Фигуровский</label>
+                </div>
+                <div class="question" data-correct="2">
+                    <p>11. В каком году вышел фильм «Красные листья»?</p>
+                    <label><input type="radio" name="c11"> 1949</label>
+                    <label><input type="radio" name="c11"> 1958</label>
+                    <label><input type="radio" name="c11"> 1965</label>
+                    <label><input type="radio" name="c11"> 1926</label>
+                </div>
+                <div class="question" data-correct="3">
+                    <p>12. Кто был режиссёром фильма «Альпийская баллада»?</p>
+                    <label><input type="radio" name="c12"> Владимир Корш-Саблин</label>
+                    <label><input type="radio" name="c12"> Юрий Тарич</label>
+                    <label><input type="radio" name="c12"> Борис Степанов</label>
+                    <label><input type="radio" name="c12"> Николай Фигуровский</label>
+                </div>
+                <div class="question" data-correct="2">
+                    <p>13. Кого уничтожили минские подпольщики в фильме «Часы остановились в полночь»?</p>
+                    <label><input type="radio" name="c13"> Гитлера</label>
+                    <label><input type="radio" name="c13"> Генерального комиссара Беларуси Вильгельма фон Кубе</label>
+                    <label><input type="radio" name="c13"> Польского президента</label>
+                    <label><input type="radio" name="c13"> Местного полицая</label>
+                </div>
+                <div class="question" data-correct="1">
+                    <p>14. В каком году вышел фильм «Альпийская баллада»?</p>
+                    <label><input type="radio" name="c14"> 1965</label>
+                    <label><input type="radio" name="c14"> 1958</label>
+                    <label><input type="radio" name="c14"> 1926</label>
+                    <label><input type="radio" name="c14"> 1949</label>
+                </div>
+                <div class="question" data-correct="3">
+                    <p>15. Кто был режиссёром фильма «Часы остановились в полночь»?</p>
+                    <label><input type="radio" name="c15"> Владимир Корш-Саблин</label>
+                    <label><input type="radio" name="c15"> Юрий Тарич</label>
+                    <label><input type="radio" name="c15"> Николай Фигуровский</label>
+                    <label><input type="radio" name="c15"> Борис Степанов</label>
+                </div>
+
+                <button type="button" class="test-btn" onclick="checkQuiz('quizCinema', 'resultCinema')">Проверить ответы</button>
+                <button type="button" class="test-btn reset" onclick="resetQuiz('quizCinema', 'resultCinema')">Сбросить ответы</button>
+            </form>
+
+            <div id="resultCinema" class="result"></div>
+            <div class="test-note"></div>
+        </div>
+
+        <!-- ===== ВИКТОРИНА 2: ЛИТЕРАТУРА ===== -->
+        <div class="test-block">
+            <h2 style="font-family:'Georgia',serif; color:var(--color-accent); font-size:28px; margin-bottom:6px;">Викторина по литературе</h2>
+            <p style="font-family:'Segoe UI', Arial, sans-serif; font-size:16px; color:#555; margin-bottom:20px;">
+                Проверь свои знания о белорусской литературе XIX-XX веков.
+            </p>
+
+            <form id="quizLiterature">
+                <div class="question" data-correct="1">
+                    <p>1. В каком году родился Янка Купала?</p>
+                    <label><input type="radio" name="l1"> 1882</label>
+                    <label><input type="radio" name="l1"> 1891</label>
+                    <label><input type="radio" name="l1"> 1906</label>
+                    <label><input type="radio" name="l1"> 1914</label>
+                </div>
+                <div class="question" data-correct="2">
+                    <p>2. В какой семье родился Винцент Дунин-Марцинкевич?</p>
+                    <label><input type="radio" name="l2"> В крестьянской</label>
+                    <label><input type="radio" name="l2"> В дворянской (обедневшей шляхетской)</label>
+                    <label><input type="radio" name="l2"> В купеческой</label>
+                    <label><input type="radio" name="l2"> В священнической</label>
+                </div>
+                <div class="question" data-correct="2">
+                    <p>3. Где родился Василь Быков?</p>
+                    <label><input type="radio" name="l3"> В Минске</label>
+                    <label><input type="radio" name="l3"> В деревне Бычки Витебской области</label>
+                    <label><input type="radio" name="l3"> В Гродно</label>
+                    <label><input type="radio" name="l3"> В Орше</label>
+                </div>
+                <div class="question" data-correct="2">
+                    <p>4. Под каким псевдонимом Франтишек Богушевич издал сборник «Дудка беларуская»?</p>
+                    <label><input type="radio" name="l4"> Ядвігін Ш.</label>
+                    <label><input type="radio" name="l4"> Мацей Бурачок</label>
+                    <label><input type="radio" name="l4"> Сымон Рэўка з-пад Барысава</label>
+                    <label><input type="radio" name="l4"> Тарас Гушча</label>
+                </div>
+                <div class="question" data-correct="2">
+                    <p>5. В каком году вышла поэма Якуба Коласа «Сымон-музыка» (окончательная редакция)?</p>
+                    <label><input type="radio" name="l5"> 1908</label>
+                    <label><input type="radio" name="l5"> 1925</label>
+                    <label><input type="radio" name="l5"> 1913</label>
+                    <label><input type="radio" name="l5"> 1940</label>
+                </div>
+                <div class="question" data-correct="1">
+                    <p>6. Кто был близким другом и соратником Винцента Дунина-Марцинкевича, написавшим музыку к его операм?</p>
+                    <label><input type="radio" name="l6"> Станислав Монюшко</label>
+                    <label><input type="radio" name="l6"> Михаил Глинка</label>
+                    <label><input type="radio" name="l6"> Фридерик Шопен</label>
+                    <label><input type="radio" name="l6"> Пётр Чайковский</label>
+                </div>
+                <div class="question" data-correct="2">
+                    <p>7. Какое произведение Цётки является публицистическим призывом к борьбе за свободу?</p>
+                    <label><input type="radio" name="l7"> «Зялёнка»</label>
+                    <label><input type="radio" name="l7"> «Прысяга над крывавымі разорамі»</label>
+                    <label><input type="radio" name="l7"> «Асеннія лісты»</label>
+                    <label><input type="radio" name="l7"> «Міхаська»</label>
+                </div>
+                <div class="question" data-correct="3">
+                    <p>8. Сколько раз Василь Быков был ранен на войне?</p>
+                    <label><input type="radio" name="l8"> Ни разу</label>
+                    <label><input type="radio" name="l8"> Один раз</label>
+                    <label><input type="radio" name="l8"> Дважды</label>
+                    <label><input type="radio" name="l8"> Трижды</label>
+                </div>
+                <div class="question" data-correct="1">
+                    <p>9. В каком году умер Янка Купала?</p>
+                    <label><input type="radio" name="l9"> 1942</label>
+                    <label><input type="radio" name="l9"> 1956</label>
+                    <label><input type="radio" name="l9"> 1945</label>
+                    <label><input type="radio" name="l9"> 1938</label>
+                </div>
+                <div class="question" data-correct="2">
+                    <p>10. Кто является главным героем поэмы «Кепска будзе!»?</p>
+                    <label><input type="radio" name="l10"> Сымон</label>
+                    <label><input type="radio" name="l10"> Аліндарка</label>
+                    <label><input type="radio" name="l10"> Міхась</label>
+                    <label><input type="radio" name="l10"> Ясь</label>
+                </div>
+                <div class="question" data-correct="2">
+                    <p>11. Какое звание было присвоено Янке Купале в 1925 году?</p>
+                    <label><input type="radio" name="l11"> Народный писатель БССР</label>
+                    <label><input type="radio" name="l11"> Народный поэт БССР</label>
+                    <label><input type="radio" name="l11"> Заслуженный деятель культуры</label>
+                    <label><input type="radio" name="l11"> Герой Социалистического Труда</label>
+                </div>
+                <div class="question" data-correct="3">
+                    <p>12. В каком городе учился Винцент Дунин-Марцинкевич?</p>
+                    <label><input type="radio" name="l12"> В Минске</label>
+                    <label><input type="radio" name="l12"> В Вильне</label>
+                    <label><input type="radio" name="l12"> В Петербурге (недолго на медика)</label>
+                    <label><input type="radio" name="l12"> В Москве</label>
+                </div>
+                <div class="question" data-correct="3">
+                    <p>13. Какое произведение Василя Быкова рассказывает о трагическом бое молодых солдат на железнодорожном переезде?</p>
+                    <label><input type="radio" name="l13"> «Трэцяя ракета»</label>
+                    <label><input type="radio" name="l13"> «Сотнікаў»</label>
+                    <label><input type="radio" name="l13"> «Жураўліны крык»</label>
+                    <label><input type="radio" name="l13"> «Альпійская балада»</label>
+                </div>
+                <div class="question" data-correct="3">
+                    <p>14. В каком произведении Янка Купала изобразил трагедию семьи, разорённой войной и социальными катаклизмами?</p>
+                    <label><input type="radio" name="l14"> «Паўлінка»</label>
+                    <label><input type="radio" name="l14"> «Сон на кургане»</label>
+                    <label><input type="radio" name="l14"> «Раскіданае гняздо»</label>
+                    <label><input type="radio" name="l14"> «Тутэйшыя»</label>
+                </div>
+                <div class="question" data-correct="1">
+                    <p>15. Где похоронен Василь Быков?</p>
+                    <label><input type="radio" name="l15"> В Минске на Военном кладбище</label>
+                    <label><input type="radio" name="l15"> В Москве на Ваганьковском кладбище</label>
+                    <label><input type="radio" name="l15"> В Гродно</label>
+                    <label><input type="radio" name="l15"> В деревне Бычки</label>
+                </div>
+
+                <button type="button" class="test-btn" onclick="checkQuiz('quizLiterature', 'resultLiterature')">Проверить ответы</button>
+                <button type="button" class="test-btn reset" onclick="resetQuiz('quizLiterature', 'resultLiterature')">Сбросить ответы</button>
+            </form>
+
+            <div id="resultLiterature" class="result"></div>
+            <div class="test-note"></div>
+        </div>
+
+        <!-- ===== ВИКТОРИНА 3: ТЕАТР ===== -->
+        <div class="test-block">
+            <h2 style="font-family:'Georgia',serif; color:var(--color-accent); font-size:28px; margin-bottom:6px;">Викторина по театру</h2>
+            <p style="font-family:'Segoe UI', Arial, sans-serif; font-size:16px; color:#555; margin-bottom:20px;">
+                Проверь свои знания о белорусском театре XIX-XX веков.
+            </p>
+
+            <form id="quizTheater">
+                <div class="question" data-correct="1">
+                    <p>1. Какой театр занимал доминирующее место в театральной жизни Беларуси в первой половине XIX века?</p>
+                    <label><input type="radio" name="t1"> Крепостной частный театр</label>
+                    <label><input type="radio" name="t1"> Городской публичный театр</label>
+                    <label><input type="radio" name="t1"> Государственный национальный театр</label>
+                    <label><input type="radio" name="t1"> Передвижной ярмарочный театр</label>
+                </div>
+                <div class="question" data-correct="2">
+                    <p>2. Кому принадлежали Несвижский и Слуцкий театры?</p>
+                    <label><input type="radio" name="t2"> Огинским</label>
+                    <label><input type="radio" name="t2"> Радзивиллам</label>
+                    <label><input type="radio" name="t2"> Тизенгаузенам</label>
+                    <label><input type="radio" name="t2"> Тышкевичам</label>
+                </div>
+                <div class="question" data-correct="2">
+                    <p>3. Где с большим успехом выступал Гродненский театр А. Тизенгаузена в 1785 году?</p>
+                    <label><input type="radio" name="t3"> В Вильне</label>
+                    <label><input type="radio" name="t3"> В Варшаве</label>
+                    <label><input type="radio" name="t3"> В Петербурге</label>
+                    <label><input type="radio" name="t3"> В Кракове</label>
+                </div>
+                <div class="question" data-correct="2">
+                    <p>4. Что стало ядром королевского придворного балета в Варшаве?</p>
+                    <label><input type="radio" name="t4"> Труппа Несвижского театра</label>
+                    <label><input type="radio" name="t4"> Танцоры Слонимского театра и артисты Гродненского театра</label>
+                    <label><input type="radio" name="t4"> Хор Могилёвского театра</label>
+                    <label><input type="radio" name="t4"> Оркестр Свислочского театра</label>
+                </div>
+                <div class="question" data-correct="2">
+                    <p>5. Какой театр графа Чернышова отличался особенно высоким профессиональным уровнем артистов?</p>
+                    <label><input type="radio" name="t5"> Гродненский</label>
+                    <label><input type="radio" name="t5"> Могилёвский</label>
+                    <label><input type="radio" name="t5"> Слонимский</label>
+                    <label><input type="radio" name="t5"> Полоцкий</label>
+                </div>
+                <div class="question" data-correct="1">
+                    <p>6. В каком году был обнародован «Устав о цензуре», положивший начало правительственному контролю над театром?</p>
+                    <label><input type="radio" name="t6"> 1804</label>
+                    <label><input type="radio" name="t6"> 1811</label>
+                    <label><input type="radio" name="t6"> 1845</label>
+                    <label><input type="radio" name="t6"> 1863</label>
+                </div>
+                <div class="question" data-correct="2">
+                    <p>7. Что декларировала театральная реформа 1845-1847 годов в Северо-Западном крае?</p>
+                    <label><input type="radio" name="t7"> Свободу гастролей для всех трупп</label>
+                    <label><input type="radio" name="t7"> Исключительное право театров губернских городов на показы в пределах своей губернии</label>
+                    <label><input type="radio" name="t7"> Запрет на все театральные постановки</label>
+                    <label><input type="radio" name="t7"> Обязательное открытие театров в каждом уезде</label>
+                </div>
+                <div class="question" data-correct="3">
+                    <p>8. Кто создал первую национальную белорусскую театральную труппу?</p>
+                    <label><input type="radio" name="t8"> Игнат Буйницкий</label>
+                    <label><input type="radio" name="t8"> Франтишек Олехнович</label>
+                    <label><input type="radio" name="t8"> Винцент Дунин-Марцинкевич</label>
+                    <label><input type="radio" name="t8"> Станислав Монюшко</label>
+                </div>
+                <div class="question" data-correct="3">
+                    <p>9. Какая опера была поставлена 9 февраля 1852 года труппой Дунина-Марцинкевича?</p>
+                    <label><input type="radio" name="t9"> «Пінская шляхта»</label>
+                    <label><input type="radio" name="t9"> «Залёты»</label>
+                    <label><input type="radio" name="t9"> «Сялянка»</label>
+                    <label><input type="radio" name="t9"> «Ідылія»</label>
+                </div>
+                <div class="question" data-correct="1">
+                    <p>10. Кто написал музыку к опере «Сялянка»?</p>
+                    <label><input type="radio" name="t10"> Станислав Монюшко</label>
+                    <label><input type="radio" name="t10"> Михаил Клеофас Огинский</label>
+                    <label><input type="radio" name="t10"> Наполеон Орда</label>
+                    <label><input type="radio" name="t10"> Антоний Радзивилл</label>
+                </div>
+                <div class="question" data-correct="2">
+                    <p>11. Что произошло сразу после премьеры «Сялянкі» в 1852 году?</p>
+                    <label><input type="radio" name="t11"> Спектакль был удостоен государственной награды</label>
+                    <label><input type="radio" name="t11"> Поступил приказ о запрете спектаклей на «простонародном языке»</label>
+                    <label><input type="radio" name="t11"> Труппа была приглашена на гастроли в Петербург</label>
+                    <label><input type="radio" name="t11"> Опера была переведена на русский язык</label>
+                </div>
+                <div class="question" data-correct="2">
+                    <p>12. Кто из перечисленных деятелей театра был репрессирован?</p>
+                    <label><input type="radio" name="t12"> Евстигней Мирович</label>
+                    <label><input type="radio" name="t12"> Владимир Голубок</label>
+                    <label><input type="radio" name="t12"> Глеб Глебов</label>
+                    <label><input type="radio" name="t12"> Борис Платонов</label>
+                </div>
+                <div class="question" data-correct="2">
+                    <p>13. В каком году был открыт Первый Белорусский государственный театр (БГТ-1)?</p>
+                    <label><input type="radio" name="t13"> 1917</label>
+                    <label><input type="radio" name="t13"> 1920</label>
+                    <label><input type="radio" name="t13"> 1926</label>
+                    <label><input type="radio" name="t13"> 1930</label>
+                </div>
+                <div class="question" data-correct="2">
+                    <p>14. Какой театр был открыт в Витебске в 1920-е годы?</p>
+                    <label><input type="radio" name="t14"> Театр имени Янки Купалы</label>
+                    <label><input type="radio" name="t14"> Театр имени Якуба Коласа</label>
+                    <label><input type="radio" name="t14"> Театр юного зрителя</label>
+                    <label><input type="radio" name="t14"> Театр рабочей молодежи</label>
+                </div>
+                <div class="question" data-correct="2">
+                    <p>15. Кто из перечисленных актёров стал символом белорусской сцены XX века?</p>
+                    <label><input type="radio" name="t15"> Галина Макарова</label>
+                    <label><input type="radio" name="t15"> Стефания Станюта</label>
+                    <label><input type="radio" name="t15"> Ростислав Янковский</label>
+                    <label><input type="radio" name="t15"> Лилия Давидович</label>
+                </div>
+
+                <button type="button" class="test-btn" onclick="checkQuiz('quizTheater', 'resultTheater')">Проверить ответы</button>
+                <button type="button" class="test-btn reset" onclick="resetQuiz('quizTheater', 'resultTheater')">Сбросить ответы</button>
+            </form>
+
+            <div id="resultTheater" class="result"></div>
+            <div class="test-note"></div>
+        </div>
+
+        <!-- ===== ВИКТОРИНА 4: МУЗЫКА ===== -->
+        <div class="test-block">
+            <h2 style="font-family:'Georgia',serif; color:var(--color-accent); font-size:28px; margin-bottom:6px;">Викторина по музыке</h2>
+            <p style="font-family:'Segoe UI', Arial, sans-serif; font-size:16px; color:#555; margin-bottom:20px;">
+                Проверь свои знания о белорусской музыке XIX-XX веков.
+            </p>
+
+            <form id="quizMusic">
+                <div class="question" data-correct="2">
+                    <p>1. Какой композитор написал музыку к первой белорусской опере «Сялянка»?</p>
+                    <label><input type="radio" name="m1"> Михаил Клеофас Огинский</label>
+                    <label><input type="radio" name="m1"> Станислав Монюшко</label>
+                    <label><input type="radio" name="m1"> Анатолий Богатырёв</label>
+                    <label><input type="radio" name="m1"> Евгений Тикоцкий</label>
+                </div>
+                <div class="question" data-correct="3">
+                    <p>2. В каком году состоялась премьера оперы «Сялянка» в Минске?</p>
+                    <label><input type="radio" name="m2"> 1840</label>
+                    <label><input type="radio" name="m2"> 1863</label>
+                    <label><input type="radio" name="m2"> 1852</label>
+                    <label><input type="radio" name="m2"> 1890</label>
+                </div>
+                <div class="question" data-correct="1">
+                    <p>3. Кто автор полонеза «Прощание с Родиной»?</p>
+                    <label><input type="radio" name="m3"> Михаил Клеофас Огинский</label>
+                    <label><input type="radio" name="m3"> Станислав Монюшко</label>
+                    <label><input type="radio" name="m3"> Винцент Дунин-Марцинкевич</label>
+                    <label><input type="radio" name="m3"> Евгений Глебов</label>
+                </div>
+                <div class="question" data-correct="2">
+                    <p>4. В каком имении Огинский создал один из первых в регионе симфонических оркестров?</p>
+                    <label><input type="radio" name="m4"> В Несвиже</label>
+                    <label><input type="radio" name="m4"> В Залесье</label>
+                    <label><input type="radio" name="m4"> В Слониме</label>
+                    <label><input type="radio" name="m4"> В Шклове</label>
+                </div>
+                <div class="question" data-correct="3">
+                    <p>5. Кто был автором либретто оперы «Сялянка»?</p>
+                    <label><input type="radio" name="m5"> Янка Купала</label>
+                    <label><input type="radio" name="m5"> Якуб Колас</label>
+                    <label><input type="radio" name="m5"> Винцент Дунин-Марцинкевич</label>
+                    <label><input type="radio" name="m5"> Максим Богданович</label>
+                </div>
+                <div class="question" data-correct="3">
+                    <p>6. Кто был учителем Евгения Глебова и Игоря Лученка?</p>
+                    <label><input type="radio" name="m6"> Евгений Тикоцкий</label>
+                    <label><input type="radio" name="m6"> Василий Золотарёв</label>
+                    <label><input type="radio" name="m6"> Анатолий Богатырёв</label>
+                    <label><input type="radio" name="m6"> Николай Аладов</label>
+                </div>
+                <div class="question" data-correct="1">
+                    <p>7. Какая опера Анатолия Богатырёва была удостоена Сталинской премии?</p>
+                    <label><input type="radio" name="m7"> «В пущах Полесья»</label>
+                    <label><input type="radio" name="m7"> «Михась Подгорный»</label>
+                    <label><input type="radio" name="m7"> «Алеся»</label>
+                    <label><input type="radio" name="m7"> «Галька»</label>
+                </div>
+                <div class="question" data-correct="2">
+                    <p>8. Кто написал музыку к фильму «Иди и смотри» Элема Климова?</p>
+                    <label><input type="radio" name="m8"> Игорь Лученок</label>
+                    <label><input type="radio" name="m8"> Евгений Глебов</label>
+                    <label><input type="radio" name="m8"> Анатолий Богатырёв</label>
+                    <label><input type="radio" name="m8"> Евгений Тикоцкий</label>
+                </div>
+                <div class="question" data-correct="1">
+                    <p>9. Какое звание было присвоено Ларисе Александровской в 1940 году?</p>
+                    <label><input type="radio" name="m9"> Народная артистка СССР</label>
+                    <label><input type="radio" name="m9"> Народная артистка БССР</label>
+                    <label><input type="radio" name="m9"> Заслуженная артистка СССР</label>
+                    <label><input type="radio" name="m9"> Герой Социалистического Труда</label>
+                </div>
+                <div class="question" data-correct="2">
+                    <p>10. Какое произведение Евгения Глебова написано по повести Василя Быкова?</p>
+                    <label><input type="radio" name="m10"> «Сотников»</label>
+                    <label><input type="radio" name="m10"> «Альпийская баллада»</label>
+                    <label><input type="radio" name="m10"> «Журавлиный крик»</label>
+                    <label><input type="radio" name="m10"> «Знак беды»</label>
+                </div>
+                <div class="question" data-correct="3">
+                    <p>11. Кто из композиторов писал музыку к операм «Михась Подгорный» и «Алеся»?</p>
+                    <label><input type="radio" name="m11"> Анатолий Богатырёв</label>
+                    <label><input type="radio" name="m11"> Евгений Глебов</label>
+                    <label><input type="radio" name="m11"> Евгений Тикоцкий</label>
+                    <label><input type="radio" name="m11"> Игорь Лученок</label>
+                </div>
+                <div class="question" data-correct="2">
+                    <p>12. Песни какого композитора исполняли Иосиф Кобзон, Лев Лещенко и София Ротару?</p>
+                    <label><input type="radio" name="m12"> Евгения Глебова</label>
+                    <label><input type="radio" name="m12"> Игоря Лученка</label>
+                    <label><input type="radio" name="m12"> Анатолия Богатырёва</label>
+                    <label><input type="radio" name="m12"> Евгения Тикоцкого</label>
+                </div>
+                <div class="question" data-correct="1">
+                    <p>13. В каком году была открыта первая народная консерватория на территории Беларуси?</p>
+                    <label><input type="radio" name="m13"> 1918</label>
+                    <label><input type="radio" name="m13"> 1920</label>
+                    <label><input type="radio" name="m13"> 1925</label>
+                    <label><input type="radio" name="m13"> 1930</label>
+                </div>
+                <div class="question" data-correct="2">
+                    <p>14. Кто был первым учителем Фредерика Шопена и работал при дворе Сапегов в Деручине?</p>
+                    <label><input type="radio" name="m14"> Станислав Монюшко</label>
+                    <label><input type="radio" name="m14"> Войцех Живный</label>
+                    <label><input type="radio" name="m14"> Ян Дусик</label>
+                    <label><input type="radio" name="m14"> Эрнст Ванжура</label>
+                </div>
+                <div class="question" data-correct="3">
+                    <p>15. Какое событие стало поводом для создания первой белорусской оперы?</p>
+                    <label><input type="radio" name="m15"> Отмена крепостного права</label>
+                    <label><input type="radio" name="m15"> Восстание 1830-1831 годов</label>
+                    <label><input type="radio" name="m15"> Стремление показать жизнь белорусской деревни на сцене</label>
+                    <label><input type="radio" name="m15"> Гастроли итальянской оперы в Минске</label>
+                </div>
+
+                <button type="button" class="test-btn" onclick="checkQuiz('quizMusic', 'resultMusic')">Проверить ответы</button>
+                <button type="button" class="test-btn reset" onclick="resetQuiz('quizMusic', 'resultMusic')">Сбросить ответы</button>
+            </form>
+
+            <div id="resultMusic" class="result"></div>
+            <div class="test-note"></div>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div>
+                <h4>Искусство Беларуси XIX-XX вв.</h4>
+                <p>Изучая искусство, мы не просто смотрим на наше прошлое - мы вступаем с ним в диалог. В этом диалоге рождается понимание настоящего.</p>
+            </div>
+            <div>
+                <h4>Разделы</h4>
+                <div class="footer-links-compact">
+                    <div><strong>Живопись:</strong> <a href="painting-19.html">XIX век</a>, <a href="painting-20.html">XX век</a></div>
+                    <div><strong>Театр:</strong> <a href="theater-19.html">XIX век</a>, <a href="theater-20.html">XX век</a></div>
+                    <div class="footer-links-row">
+                        <a href="cinema.html">Кино</a>
+                        <span class="nav-separator">•</span>
+                        <a href="literature.html">Литература</a>
+                        <span class="nav-separator">•</span>
+                        <a href="music.html">Музыка</a>
+                    </div>
+                    <div class="footer-links-row">
+                        <a href="sources.html">Источники</a>
+                        <span class="nav-separator">•</span>
+                        <a href="tests.html">Тесты</a>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h4>Для связи</h4>
+                <p>ellamarie8576@gmail.com</p>
+                <p class="small">Все права защищены</p>
+            </div>
+            <div class="footer-logo">
+                <svg width="60" height="60" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="100" cy="100" r="95" fill="#8B2A3D" />
+                    <circle cx="100" cy="100" r="85" fill="none" stroke="#D4AF37" stroke-width="2" />
+                    <rect x="50" y="70" width="100" height="60" rx="3" fill="#F9F6F0" />
+                    <line x1="100" y1="70" x2="100" y2="130" stroke="#8B2A3D" stroke-width="2" />
+                    <path d="M50 75 Q75 90 100 75 L100 130 Q75 115 50 130 Z" fill="#D4AF37" opacity="0.3" />
+                    <path d="M100 75 Q125 90 150 75 L150 130 Q125 115 100 130 Z" fill="#D4AF37" opacity="0.3" />
+                    <line x1="100" y1="50" x2="100" y2="30" stroke="#D4AF37" stroke-width="2" />
+                    <line x1="80" y1="55" x2="70" y2="40" stroke="#D4AF37" stroke-width="2" />
+                    <line x1="120" y1="55" x2="130" y2="40" stroke="#D4AF37" stroke-width="2" />
+                </svg>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function checkQuiz(formId, resultId) {
+            const form = document.getElementById(formId);
+            const questions = form.querySelectorAll('.question');
+            let correct = 0;
+            const total = questions.length;
+
+            questions.forEach((q) => {
+                const correctIndex = parseInt(q.getAttribute('data-correct'));
+                const labels = q.querySelectorAll('label');
+                const radios = q.querySelectorAll('input[type="radio"]');
+
+                let selectedIndex = -1;
+                radios.forEach((r, i) => {
+                    if (r.checked) selectedIndex = i + 1;
+                });
+
+                if (selectedIndex === correctIndex) correct++;
+
+                labels.forEach((label, i) => {
+                    const idx = i + 1;
+                    if (idx === correctIndex) {
+                        label.style.color = '#2e7d32';
+                        label.style.fontWeight = 'bold';
+                    } else if (idx === selectedIndex) {
+                        label.style.color = '#c62828';
+                        label.style.fontWeight = 'bold';
+                    } else {
+                        label.style.color = '#444';
+                        label.style.fontWeight = 'normal';
+                    }
+                });
+            });
+
+            document.getElementById(resultId).innerHTML =
+                'Правильных ответов: <strong>' + correct + ' из ' + total + '</strong>';
+        }
+
+        function resetQuiz(formId, resultId) {
+            const form = document.getElementById(formId);
+            form.reset();
+            form.querySelectorAll('.question label').forEach(label => {
+                label.style.color = '#444';
+                label.style.fontWeight = 'normal';
+            });
+            document.getElementById(resultId).innerHTML = '';
+        }
+    </script>
+
+</body>
+</html>
