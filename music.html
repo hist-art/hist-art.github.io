@@ -83,7 +83,7 @@
             border-top: 1px dashed rgba(139, 42, 61, 0.25);
         }
 
-        .audio-block p {
+        .audio-block > p {
             font-family: 'Segoe UI', Arial, sans-serif;
             font-size: 15px;
             font-weight: 600;
@@ -91,9 +91,21 @@
             margin-bottom: 10px;
         }
 
-        .audio-block audio {
+        .audio-item {
+            margin-bottom: 14px;
+        }
+
+        .audio-title {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            color: #555;
+            margin: 0 0 6px;
+        }
+
+        .audio-item audio {
             width: 100%;
-            margin-bottom: 8px;
+            margin-bottom: 0;
         }
 
         .extra-space {
@@ -186,14 +198,22 @@
 
             <div class="audio-block">
                 <p>Послушать:</p>
-                <audio controls>
-                    <source src="audio/oginski_1.mp3" type="audio/mpeg" />
-                    Ваш браузер не поддерживает аудио.
-                </audio>
-                <audio controls>
-                    <source src="audio/oginski_2.mp3" type="audio/mpeg" />
-                    Ваш браузер не поддерживает аудио.
-                </audio>
+
+                <div class="audio-item">
+                    <p class="audio-title">Номер 1</p>
+                    <audio controls>
+                        <source src="music/music_1.mp3" type="audio/mpeg" />
+                        Ваш браузер не поддерживает аудио.
+                    </audio>
+                </div>
+
+                <div class="audio-item">
+                    <p class="audio-title">Номер 2</p>
+                    <audio controls>
+                        <source src="music/music_2.mp3" type="audio/mpeg" />
+                        Ваш браузер не поддерживает аудио.
+                    </audio>
+                </div>
             </div>
 
             <div class="extra-space"></div>
@@ -211,6 +231,9 @@
 
             <p class="composer-text">
                 Станислав Монюшко родился в 1819 году в имении Убель под Минском. Он происходил из старинного рода, получил основательное музыкальное образование в Варшаве и Берлине, а большую часть жизни работал в Вильне и Варшаве. Монюшко известен прежде всего как создатель знаменитой оперы «Галька», ставшей классикой польской музыки. Но его связь с Беларусью не ограничивается местом рождения: он выступил соавтором музыки к опере «Селянка» на либретто Винцента Дунина-Марцинкевича, создав её ключевые разделы совместно с минским композитором Константином Кжижановским. Эта опера, поставленная в 1852 году в Минске, стала важнейшим веховым событием в истории белорусского театра и музыки. Монюшко также писал романсы, песни, кантаты и оркестровые произведения, неизменно сочетая европейский классический стиль с народными мелодиями, которые слышал с самого детства.
+            </p>
+
+            <div class="history-block">
                 <p>
                     <strong>Связь с историей.</strong> «Сялянка» создавалась в период, когда белорусские земли находились в составе Российской империи, а белорусский язык и культура подвергались давлению. После восстания 1830-1831 годов царское правительство взяло курс на русификацию края: в 1840 году Николай I запретил употребление слова «белорус», а территория Беларуси стала называться Северо-Западным краем России. В этих условиях постановка оперы на белорусском языке стала не просто художественным событием, а актом национального самосознания. Премьера состоялась 9 февраля 1852 года в Минске, в городском театре. Спектакль шёл на белорусском и польском языках, в нём звучали народные песни и танцы. Уже на следующий день после премьеры поступил устный, а затем и письменный приказ о запрете спектаклей на «простонародном языке». Несмотря на запрет, «Сялянку» неоднократно ставили в Минске, Бобруйске, Слуцке, Несвиже и Глуске - но уже не в театральных помещениях, а в частных домах. Опера Монюшко и Дунина-Марцинкевича стала первым произведением, в котором белорусский язык и белорусская тема вышли на оперную сцену, и это определило её место в истории национальной культуры.
                 </p>
@@ -218,20 +241,28 @@
 
             <div class="audio-block">
                 <p>Послушать:</p>
-                <audio controls>
-                    <source src="audio/moniuszko_1.mp3" type="audio/mpeg" />
-                    Ваш браузер не поддерживает аудио.
-                </audio>
-                <audio controls>
-                    <source src="audio/moniuszko_2.mp3" type="audio/mpeg" />
-                    Ваш браузер не поддерживает аудио.
-                </audio>
+
+                <div class="audio-item">
+                    <p class="audio-title">Номер 1</p>
+                    <audio controls>
+                        <source src="music/music_3.mp3" type="audio/mpeg" />
+                        Ваш браузер не поддерживает аудио.
+                    </audio>
+                </div>
+
+                <div class="audio-item">
+                    <p class="audio-title">Номер 2</p>
+                    <audio controls>
+                        <source src="music/music_4.mp3" type="audio/mpeg" />
+                        Ваш браузер не поддерживает аудио.
+                    </audio>
+                </div>
             </div>
 
             <div class="extra-space"></div>
         </div>
 
-        <!-- ===== КОМПОЗИТОР 4: АНАТОЛИЙ БОГАТЫРЁВ ===== -->
+        <!-- ===== КОМПОЗИТОР 3: АНАТОЛИЙ БОГАТЫРЁВ ===== -->
         <div class="composer-block">
             <div class="composer-header">
                 <img src="bogatirev.jpg" alt="Анатолий Богатырёв" class="composer-photo" />
@@ -253,20 +284,28 @@
 
             <div class="audio-block">
                 <p>Послушать:</p>
-                <audio controls>
-                    <source src="audio/bogatyrev_1.mp3" type="audio/mpeg" />
-                    Ваш браузер не поддерживает аудио.
-                </audio>
-                <audio controls>
-                    <source src="audio/bogatyrev_2.mp3" type="audio/mpeg" />
-                    Ваш браузер не поддерживает аудио.
-                </audio>
+
+                <div class="audio-item">
+                    <p class="audio-title">Кантанта «Белорусским партизанам»</p>
+                    <audio controls>
+                        <source src="music/music_5.mp3" type="audio/mpeg" />
+                        Ваш браузер не поддерживает аудио.
+                    </audio>
+                </div>
+
+                <div class="audio-item">
+                    <p class="audio-title">Ария Кузьмича «Люблю я приволье» из оперы «В пущах Полесья»</p>
+                    <audio controls>
+                        <source src="music/music_6.mp3" type="audio/mpeg" />
+                        Ваш браузер не поддерживает аудио.
+                    </audio>
+                </div>
             </div>
 
             <div class="extra-space"></div>
         </div>
 
-        <!-- ===== КОМПОЗИТОР 5: ЕВГЕНИЙ ТИКОЦКИЙ ===== -->
+        <!-- ===== КОМПОЗИТОР 4: ЕВГЕНИЙ ТИКОЦКИЙ ===== -->
         <div class="composer-block">
             <div class="composer-header">
                 <img src="tikotskiy.jpg" alt="Евгений Тикоцкий" class="composer-photo" />
@@ -288,20 +327,28 @@
 
             <div class="audio-block">
                 <p>Послушать:</p>
-                <audio controls>
-                    <source src="audio/tikotsky_1.mp3" type="audio/mpeg" />
-                    Ваш браузер не поддерживает аудио.
-                </audio>
-                <audio controls>
-                    <source src="audio/tikotsky_2.mp3" type="audio/mpeg" />
-                    Ваш браузер не поддерживает аудио.
-                </audio>
+
+                <div class="audio-item">
+                    <p class="audio-title">Номер 1</p>
+                    <audio controls>
+                        <source src="music/music_7.mp3" type="audio/mpeg" />
+                        Ваш браузер не поддерживает аудио.
+                    </audio>
+                </div>
+
+                <div class="audio-item">
+                    <p class="audio-title">Номер 2</p>
+                    <audio controls>
+                        <source src="music/music_8.mp3" type="audio/mpeg" />
+                        Ваш браузер не поддерживает аудио.
+                    </audio>
+                </div>
             </div>
 
             <div class="extra-space"></div>
         </div>
 
-        <!-- ===== КОМПОЗИТОР 7: ЕВГЕНИЙ ГЛЕБОВ ===== -->
+        <!-- ===== КОМПОЗИТОР 5: ЕВГЕНИЙ ГЛЕБОВ ===== -->
         <div class="composer-block">
             <div class="composer-header">
                 <img src="glebov.jpg" alt="Евгений Глебов" class="composer-photo" />
@@ -323,20 +370,28 @@
 
             <div class="audio-block">
                 <p>Послушать:</p>
-                <audio controls>
-                    <source src="audio/glebov_1.mp3" type="audio/mpeg" />
-                    Ваш браузер не поддерживает аудио.
-                </audio>
-                <audio controls>
-                    <source src="audio/glebov_2.mp3" type="audio/mpeg" />
-                    Ваш браузер не поддерживает аудио.
-                </audio>
+
+                <div class="audio-item">
+                    <p class="audio-title">Номер 1</p>
+                    <audio controls>
+                        <source src="music/music_9.mp3" type="audio/mpeg" />
+                        Ваш браузер не поддерживает аудио.
+                    </audio>
+                </div>
+
+                <div class="audio-item">
+                    <p class="audio-title">Номер 2</p>
+                    <audio controls>
+                        <source src="music/music_10.mp3" type="audio/mpeg" />
+                        Ваш браузер не поддерживает аудио.
+                    </audio>
+                </div>
             </div>
 
             <div class="extra-space"></div>
         </div>
 
-        <!-- ===== КОМПОЗИТОР 8: ИГОРЬ ЛУЧЕНОК ===== -->
+        <!-- ===== КОМПОЗИТОР 6: ИГОРЬ ЛУЧЕНОК ===== -->
         <div class="composer-block">
             <div class="composer-header">
                 <img src="luchenok.jpg" alt="Игорь Лученок" class="composer-photo" />
@@ -358,14 +413,22 @@
 
             <div class="audio-block">
                 <p>Послушать:</p>
-                <audio controls>
-                    <source src="audio/luchenok_1.mp3" type="audio/mpeg" />
-                    Ваш браузер не поддерживает аудио.
-                </audio>
-                <audio controls>
-                    <source src="audio/luchenok_2.mp3" type="audio/mpeg" />
-                    Ваш браузер не поддерживает аудио.
-                </audio>
+
+                <div class="audio-item">
+                    <p class="audio-title">Номер 1</p>
+                    <audio controls>
+                        <source src="music/music_11.mp3" type="audio/mpeg" />
+                        Ваш браузер не поддерживает аудио.
+                    </audio>
+                </div>
+
+                <div class="audio-item">
+                    <p class="audio-title">Номер 2</p>
+                    <audio controls>
+                        <source src="music/music_12.mp3" type="audio/mpeg" />
+                        Ваш браузер не поддерживает аудио.
+                    </audio>
+                </div>
             </div>
 
             <div class="extra-space"></div>
@@ -418,6 +481,9 @@
             </div>
         </div>
     </footer>
+
+</body>
+</html>
 
 </body>
 </html>
