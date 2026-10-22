@@ -5,6 +5,140 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Кино - Искусство Беларуси XIX-XX вв.</title>
     <link rel="stylesheet" href="style.css" />
+    <style>
+        /* ===== ЗАГОЛОВКИ РАЗДЕЛОВ ===== */
+        .cinema-section-title {
+            font-family: 'Georgia', serif;
+            color: var(--color-accent);
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        /* ===== БЛОК ФИЛЬМА ===== */
+        .film-block {
+            padding: 25px 25px 10px 25px;
+            margin-bottom: 30px;
+        }
+
+        .film-title {
+            font-family: 'Gelasio', serif;
+            color: var(--color-accent);
+            font-size: 28px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        /* ===== ГАЛЕРЕЯ КАДРОВ ===== */
+        .film-gallery {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .film-photo {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 2px solid var(--color-accent);
+            display: block;
+        }
+
+        .film-desc {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.7;
+            color: #333;
+        }
+
+        /* ===== МОБИЛЬНАЯ АДАПТАЦИЯ ===== */
+        @media (max-width: 768px) {
+            .cinema-section-title {
+                font-size: 22px;
+            }
+
+            .film-block {
+                padding: 18px 16px 8px 16px;
+                margin-bottom: 22px;
+                border-radius: 12px;
+            }
+
+            .film-title {
+                font-size: 21px;
+            }
+
+            .film-gallery {
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 8px;
+                margin-bottom: 12px;
+            }
+
+            .film-photo {
+                height: 150px;
+                border-radius: 8px;
+                border-width: 2px;
+            }
+
+            .film-desc {
+                font-size: 15px;
+                line-height: 1.6;
+            }
+
+            .literature-text-block {
+                padding: 18px 16px;
+                margin-bottom: 22px;
+                border-radius: 12px;
+            }
+
+            .literature-text-block p {
+                font-size: 15px;
+                line-height: 1.6;
+            }
+        }
+
+        @media (max-width: 550px) {
+            .film-gallery {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .film-photo {
+                height: 210px;
+                border-radius: 10px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .cinema-section-title {
+                font-size: 20px;
+            }
+
+            .film-block {
+                padding: 14px 12px 6px 12px;
+            }
+
+            .film-title {
+                font-size: 19px;
+            }
+
+            .film-photo {
+                height: 180px;
+            }
+
+            .film-desc {
+                font-size: 14px;
+            }
+
+            .literature-text-block {
+                padding: 14px 12px;
+            }
+
+            .literature-text-block p {
+                font-size: 14px;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -43,7 +177,7 @@
 
      <!-- ===== ВЕРХНИЙ БЛОК ===== -->
         <div class="literature-text-block">
-            <h2 style="font-family: 'Georgia', serif; color: var(--color-accent); font-size: 28px; margin-bottom: 10px;">Белорусское кино XX века</h2>
+            <h2 class="cinema-section-title">Белорусское кино XX века</h2>
             <p>
                 Раздел о кино построен вокруг нескольких фильмов, каждый из которых связан с определённым историческим периодом. «Лесная быль» даёт представление о революционной борьбе 1920-х годов, «Красные листья» раскрывают тему борьбы в Западной Беларуси в 1930-е годы. «Альпийская баллада» и «Часы остановились в полночь» показывают Великую Отечественную войну с разных сторон: через историю побега из плена и через подпольное сопротивление в оккупированном Минске.
             </p>
@@ -54,77 +188,74 @@
 
         <!-- ===== БЛОК О БЕЛОРУССКОМ КИНЕМАТОГРАФЕ ===== -->
         <div class="literature-text-block" style="margin-top: 20px;">
-            <h2 style="font-family: 'Georgia', serif; color: var(--color-accent); font-size: 28px; margin-bottom: 10px;">Как рождалось белорусское кино</h2>
+            <h2 class="cinema-section-title">Как рождалось белорусское кино</h2>
             <p>
                 Белорусское кино начиналось с хроники, а не с игровых картин. В 1924 году при Наркомпросе БССР создали управление «Белгоскино», а в 1928-м в Ленинграде открылась одноименная киностудия (позже – «Советская Беларусь»). У истоков стояли Юрий Тарич и Владимир Гардин, один из основателей будущего ВГИКа. Они заложили основу национальной кинотрадиции: интерес к истории и попытку говорить о сложном просто и честно.
             </p>
             <p>
                 В 1930-е годы, с появлением звука, режиссеры переключились на темы воспитания нового человека и экранизации литературной классики. В Ленинграде сняли «Соловья» по Змитроку Бядуле, чеховские короткометражки «Маска», «Налим», «Медведь», «Человек в футляре» и «Поручика Киже» по Юрию Тынянову. Вышедший в 1934 году «Поручик Киже» Александра Файнциммера стал новаторским для своего времени благодаря операторской работе Аркадия Кольцатого и музыке Сергея Прокофьева. Полноценному переезду киностудии в Минск и завершению строительства собственного съемочного комплекса помешала Великая Отечественная война – окончательно в столицу республики производство вернулось уже после освобождения.
+            </p>
             <p>
                 В годы «оттепели» военная тема в белорусском кино очистилась от официоза. В 1964 году вышел фильм «Через кладбище» - полнометражный дебют Виктора Турова, выпускника мастерской Александра Довженко и Михаила Чиаурели. Режиссёр показал войну без плакатного пафоса, через будни людей в оккупации. Позже, к 100-летию кинематографа, эта картина была включена ЮНЕСКО в список 100 наиболее значимых фильмов о войне. По опросу критиков, лента «Я родом из детства» была признана лучшей за всю историю белорусского кино. Тема Великой Отечественной войны осталась главной и для других режиссёров этого поколения – Бориса Степанова, Игоря Добролюбова, Валерия Рубинчика. А в 1985 году Элем Климов снял на «Беларусьфильме» по сценарию Алеся Адамовича картину «Иди и смотри», признанную впоследствии одной из самых сильных антивоенных лент в истории мирового кино.
             </p>
         </div>
 
         <!-- ===== ФИЛЬМ 1: ЛЕСНАЯ БЫЛЬ ===== -->
-        <div class="hero-text" style="padding: 25px 25px 10px 25px; margin-bottom: 30px;">
-            <h3 style="font-family: 'Gelasio', serif; color: var(--color-accent); font-size: 28px; margin-bottom: 10px; text-align: center;">«Лесная быль» (1926)</h3>
+        <div class="hero-text film-block">
+            <h3 class="film-title">«Лесная быль» (1926)</h3>
 
-            <!-- 3 ФОТО В РЯД -->
-            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
-                <img src="5.jpg" alt="Лесная быль 1" style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px; border: 2px solid var(--color-accent);" />
-                <img src="8.jpg" alt="Лесная быль 2" style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px; border: 2px solid var(--color-accent);" />
-                <img src="9.jpg" alt="Лесная быль 3" style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px; border: 2px solid var(--color-accent);" />
+            <div class="film-gallery">
+                <img src="5.jpg" alt="Лесная быль 1" class="film-photo" />
+                <img src="8.jpg" alt="Лесная быль 2" class="film-photo" />
+                <img src="9.jpg" alt="Лесная быль 3" class="film-photo" />
             </div>
 
-            <p style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 16px; line-height: 1.7; color: #333;">
+            <p class="film-desc">
                 «Лесная быль» - первый белорусский игровой фильм, снятый Юрием Таричем в 1926 году на базе «Белгоскино». Его действие разворачивается в 1920 году, когда Беларусь стала ареной столкновений между Красной Армией и польскими войсками. В центре сюжета – юный пастух Гришка, который становится партизанским разведчиком. Фильм ценен не только как исторический документ, но и как первая попытка создать на экране национальные образы: именно здесь зрители впервые увидели аутентичный белорусский лес, деревенские хаты и быт партизан. Несмотря на техническую скромность немого кино тех лет, картина заложила фундамент для всей будущей киноиндустрии республики. Именно с «Лесной были» начался официальный отсчет истории белорусского кинематографа.
             </p>
         </div>
 
         <!-- ===== ФИЛЬМ 2: КРАСНЫЕ ЛИСТЬЯ ===== -->
-        <div class="hero-text" style="padding: 25px 25px 10px 25px; margin-bottom: 30px;">
-            <h3 style="font-family: 'Gelasio', serif; color: var(--color-accent); font-size: 28px; margin-bottom: 10px; text-align: center;">«Красные листья» (1958)</h3>
+        <div class="hero-text film-block">
+            <h3 class="film-title">«Красные листья» (1958)</h3>
 
-            <!-- 3 ФОТО В РЯД -->
-            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
-                <img src="11.jpg" alt="Красные листья 1" style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px; border: 2px solid var(--color-accent);" />
-                <img src="12.jpg" alt="Красные листья 2" style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px; border: 2px solid var(--color-accent);" />
-                <img src="13.jpg" alt="Красные листья 3" style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px; border: 2px solid var(--color-accent);" />
+            <div class="film-gallery">
+                <img src="11.jpg" alt="Красные листья 1" class="film-photo" />
+                <img src="12.jpg" alt="Красные листья 2" class="film-photo" />
+                <img src="13.jpg" alt="Красные листья 3" class="film-photo" />
             </div>
 
-            <p style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 16px; line-height: 1.7; color: #333;">
+            <p class="film-desc">
                 Фильм Владимира Корш-Саблина «Красные листья», снятый в 1958 году, стал одной из самых заметных советских картин о подпольной борьбе в Западной Беларуси. Сюжет во многом опирается на биографию Сергея Притыцкого – реального исторического деятеля, участника революционного движения на оккупированных Польшей территориях. Действие разворачивается в середине 1930-х годов в условиях жесткого национального и социального гнета. Фильм детально воссоздает атмосферу подполья, аресты и знаменитые судебные процессы тех лет, которые прочно вошли в историческую память белорусов. Снятая в период «оттепели» картина ушла от излишней плакатности: Корш-Саблин сделал упор на сильную приключенческую линию и человеческие драмы героев. «Красные листья» закрепили успех приключенческого жанра в белорусском кино и остаются классическим экранным воплощением темы западнобелорусского сопротивления.
             </p>
         </div>
 
         <!-- ===== ФИЛЬМ 3: ЧАСЫ ОСТАНОВИЛИСЬ В ПОЛНОЧЬ ===== -->
-        <div class="hero-text" style="padding: 25px 25px 10px 25px; margin-bottom: 30px;">
-            <h3 style="font-family: 'Gelasio', serif; color: var(--color-accent); font-size: 28px; margin-bottom: 10px; text-align: center;">«Часы остановились в полночь» (1958)</h3>
+        <div class="hero-text film-block">
+            <h3 class="film-title">«Часы остановились в полночь» (1958)</h3>
 
-            <!-- 3 ФОТО В РЯД -->
-            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
-                <img src="1.png" alt="Часы 1" style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px; border: 2px solid var(--color-accent);" />
-                <img src="2.png" alt="Часы 2" style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px; border: 2px solid var(--color-accent);" />
-                <img src="3.png" alt="Часы 3" style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px; border: 2px solid var(--color-accent);" />
+            <div class="film-gallery">
+                <img src="1.png" alt="Часы 1" class="film-photo" />
+                <img src="2.png" alt="Часы 2" class="film-photo" />
+                <img src="3.png" alt="Часы 3" class="film-photo" />
             </div>
 
-            <p style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 16px; line-height: 1.7; color: #333;">
+            <p class="film-desc">
                Фильм Николая Фигуровского «Часы остановились в полночь», вышедший на экраны на рубеже 1958–1959 годов, посвящен одной из самых громких операций советского подполья. В основе сюжета лежит реальная история уничтожения гауляйтера Беларуси Вильгельма Кубе в оккупированном Минске. Правда, в самой картине имена изменили: немецкий наместник выведен под фамилией фон Кауниц, а его горничная-ликвидатор – как Марина Казанич. Ленту снимали всего через 15 лет после окончания войны, поэтому атмосфера оккупированного города, постоянный страх и риск подпольной работы переданы на экране с поразительной достоверностью. Для белорусского кинематографа этот фильм стал огромным успехом – в кинотеатрах его посмотрели около 35 миллионов зрителей. Сегодня картина считается классикой отечественного военного кино, с которой началось глубокое осмысление темы минского подполья.
             </p>
         </div>
 
         <!-- ===== ФИЛЬМ 4: АЛЬПИЙСКАЯ БАЛЛАДА ===== -->
-        <div class="hero-text" style="padding: 25px 25px 10px 25px; margin-bottom: 30px;">
-            <h3 style="font-family: 'Gelasio', serif; color: var(--color-accent); font-size: 28px; margin-bottom: 10px; text-align: center;">«Альпийская баллада» (1965)</h3>
+        <div class="hero-text film-block">
+            <h3 class="film-title">«Альпийская баллада» (1965)</h3>
 
-            <!-- 3 ФОТО В РЯД -->
-            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
-                <img src="14.jpg" alt="Альпийская баллада 1" style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px; border: 2px solid var(--color-accent);" />
-                <img src="4.jpg" alt="Альпийская баллада 2" style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px; border: 2px solid var(--color-accent);" />
-                <img src="6.png" alt="Альпийская баллада 3" style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px; border: 2px solid var(--color-accent);" />
+            <div class="film-gallery">
+                <img src="14.jpg" alt="Альпийская баллада 1" class="film-photo" />
+                <img src="4.jpg" alt="Альпийская баллада 2" class="film-photo" />
+                <img src="6.png" alt="Альпийская баллада 3" class="film-photo" />
             </div>
 
-            <p style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 16px; line-height: 1.7; color: #333;">
+            <p class="film-desc">
                 Фильм Бориса Степанова «Альпийская баллада», снятый в 1965 году, стал первой культовой экранизацией прозы Василя Быкова. Это пронзительная история о трех днях из жизни советского солдата Ивана и итальянской девушки Джулии, сбежавших из нацистского концлагеря в горах. Война здесь показана без масштабных сражений: режиссер сосредоточился на камерной драме двоих людей, которые посреди ужаса и преследования находят любовь и возвращают друг другу веру в человечность. Интересно, что альпийские пейзажи съемочная группа искала на Кавказе (в Тебердинском заповеднике) и в Калининграде. «Альпийская баллада» ушла от привычных плакатных канонов военного кино и завоевала несколько международных наград, оставшись в истории белорусского экрана как одна из самых поэтичных и честных картин о войне.
             </p>
         </div>
@@ -153,7 +284,7 @@
                     <div class="footer-links-row">
                         <a href="sources.html">Источники</a>
                         <span class="nav-separator">•</span>
-                        <a href="test.html">Тесты</a>
+                        <a href="tests.html">Тесты</a>
                     </div>
                 </div>
             </div>
