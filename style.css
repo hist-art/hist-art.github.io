@@ -24,16 +24,16 @@ body {
 /* ===== ФОН ===== */
 .page-bg {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: -12px; /* запас, чтобы blur не давал прозрачную кромку */
     z-index: -1;
     background-image: url('collage.png');
     background-size: cover;
-    background-position: center;
+    background-position: center center;
     background-repeat: no-repeat;
+    background-color: #2a1a1d; /* тёмный fallback, пока фото грузится */
     filter: blur(3px) brightness(0.75);
+    transform: translateZ(0); /* аппаратное ускорение */
+    pointer-events: none;     /* фон не перехватывает клики */
 }
 
 /* ===== ШАПКА ===== */
@@ -613,6 +613,13 @@ footer {
 }
 
 @media (max-width: 768px) {
+    /* === ФОН НА ПЛАНШЕТЕ === */
+    .page-bg {
+        inset: -8px;
+        background-position: center center;
+        filter: blur(2px) brightness(0.72);
+    }
+
     header h1 {
         font-size: 20px;
     }
@@ -777,6 +784,12 @@ footer {
 }
 
 @media (max-width: 480px) {
+    /* === ФОН НА ТЕЛЕФОНЕ === */
+    .page-bg {
+        inset: -6px;
+        filter: blur(1.5px) brightness(0.68);
+    }
+
     header h1 {
         font-size: 17px;
     }
@@ -861,7 +874,7 @@ footer {
 }
 
 .literature-text-block {
-    background: rgba(255, 255, 255, 0.8);  /* ← 0.9 — почти непрозрачный */
+    background: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(3px);
     padding: 28px 30px;
     border-radius: 14px;
@@ -1079,15 +1092,15 @@ footer {
     font-family: 'Segoe UI', Arial, sans-serif;
     font-size: 18px;
     padding: 4px 6px;
-    border-bottom: none;          /* ← убрал подчёркивание */
+    border-bottom: none;
     transition: 0.2s;
     display: inline-block;
     border-radius: 4px;
 }
 
 .index-grid a:hover {
-    color: var(--color-accent);   /* ← загорается только имя */
-    background: rgba(139, 42, 61, 0.08); /* лёгкий фон при наведении */
+    color: var(--color-accent);
+    background: rgba(139, 42, 61, 0.08);
 }
 
 .poem-three-columns {
@@ -1128,27 +1141,6 @@ footer {
 .archive-link:hover {
     color: #8B2A3D;
     text-decoration: underline;
-}
-
-@media (max-width: 768px) {
-    .literature-text-block {
-        padding: 18px 16px;
-        margin-bottom: 22px;
-        border-radius: 12px;
-    }
-    .literature-text-block p {
-        font-size: 15px;
-        line-height: 1.6;
-    }
-}
-
-@media (max-width: 400px) {
-    .literature-text-block {
-        padding: 14px 12px;
-    }
-    .literature-text-block p {
-        font-size: 14px;
-    }
 }
 
 @media (max-width: 768px) {
