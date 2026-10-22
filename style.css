@@ -1150,3 +1150,24 @@ footer {
         font-size: 14px;
     }
 }
+
+@media (max-width: 768px) {
+    .literature-text-block {
+        padding: 18px 16px;
+        margin-bottom: 22px;
+        border-radius: 12px;
+    }
+    .literature-text-block p {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+}
+
+@media (max-width: 400px) {
+    .literature-text-block {
+        padding: 14px 12px;
+    }
+    .literature-text-block p {
+        font-size: 14px;
+    }
+}
