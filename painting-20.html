@@ -5,6 +5,204 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Живопись XX века - Искусство Беларуси</title>
     <link rel="stylesheet" href="style.css" />
+    <style>
+        /* ===== ЗАГОЛОВОК РАЗДЕЛА ===== */
+        .painting-section-title {
+            font-family: 'Georgia', serif;
+            color: var(--color-accent);
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        /* ===== КАРТОЧКА ХУДОЖНИКА ===== */
+        .artist-block {
+            padding: 25px 25px 10px 25px;
+            margin-bottom: 30px;
+        }
+
+        .artist-name {
+            font-family: 'Gelasio', serif;
+            color: var(--color-accent);
+            font-size: 28px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .artist-style {
+            text-align: center;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            font-size: 15px;
+            color: #777;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        .artist-image-wrap {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .artist-image {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 12px;
+            border: 2px solid var(--color-accent);
+        }
+
+        .artist-image-narrow {
+            max-width: 400px;
+        }
+
+        .image-caption {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            font-size: 13px;
+            color: #555;
+            margin-top: 6px;
+        }
+
+        .artist-bio {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.7;
+            color: #333;
+        }
+
+        /* ===== БЛОК «СВЯЗЬ С ИСТОРИЕЙ» ===== */
+        .history-note {
+            background: rgba(139, 42, 61, 0.05);
+            border-left: 4px solid var(--color-accent);
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .history-note-title {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--color-accent);
+            margin-bottom: 8px;
+        }
+
+        .history-note-text {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            font-size: 15px;
+            line-height: 1.7;
+            color: #444;
+            margin: 0;
+        }
+
+        /* ===== БЛОК «ОСНОВНЫЕ ПРОИЗВЕДЕНИЯ» ===== */
+        .works-block {
+            margin-top: 15px;
+            padding: 15px;
+            border: 1px solid rgba(139, 42, 61, 0.2);
+            border-radius: 8px;
+        }
+
+        .works-title {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .works-list {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            font-size: 15px;
+            line-height: 1.8;
+            color: #444;
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        /* ===== МОБИЛЬНАЯ АДАПТАЦИЯ ===== */
+        @media (max-width: 768px) {
+            .painting-section-title {
+                font-size: 22px;
+            }
+
+            .artist-block {
+                padding: 18px 16px 8px 16px;
+                margin-bottom: 22px;
+                border-radius: 12px;
+            }
+
+            .artist-name {
+                font-size: 21px;
+            }
+
+            .artist-style {
+                font-size: 13px;
+            }
+
+            .artist-bio {
+                font-size: 15px;
+                line-height: 1.6;
+            }
+
+            .history-note {
+                padding: 12px 14px;
+                margin: 12px 0;
+                border-radius: 0 8px 8px 0;
+            }
+
+            .history-note-title {
+                font-size: 14px;
+            }
+
+            .history-note-text {
+                font-size: 14px;
+                line-height: 1.6;
+            }
+
+            .works-block {
+                padding: 12px 14px;
+                margin-top: 12px;
+            }
+
+            .works-title {
+                font-size: 14px;
+            }
+
+            .works-list {
+                font-size: 14px;
+                line-height: 1.6;
+                padding-left: 18px;
+            }
+
+            .image-caption {
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .painting-section-title {
+                font-size: 20px;
+            }
+
+            .artist-block {
+                padding: 14px 12px 6px 12px;
+            }
+
+            .artist-name {
+                font-size: 19px;
+            }
+
+            .artist-bio,
+            .history-note-text,
+            .works-list {
+                font-size: 14px;
+            }
+
+            .artist-style,
+            .history-note-title,
+            .works-title {
+                font-size: 13px;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -43,36 +241,36 @@
 
         <!-- ===== ВВЕДЕНИЕ ===== -->
         <div class="literature-text-block">
-            <h2 style="font-family: 'Georgia', serif; color: var(--color-accent); font-size: 28px; margin-bottom: 10px;">Живопись Беларуси XX века</h2>
+            <h2 class="painting-section-title">Живопись Беларуси XX века</h2>
             <p>
                 XX век стал для белорусского изобразительного искусства эпохой радикальных перемен. В начале столетия художники осваивали импрессионизм, символизм и модерн, а Витебск на несколько лет превратился в один из центров мирового авангарда: Марк Шагал основал здесь художественное училище, а Казимир Малевич и его объединение УНОВИС утверждали супрематизм. После 1917 года и образования БССР в 1920-е годы ещё сохранялась стилистическая свобода, но уже в 1930-е годы живопись была поставлена в строгие рамки метода социалистического реализма, хотя и сохраняла национальные традиции. В годы Великой Отечественной войны главной темой произведений стали патриотизм, мужество народа и боль за оккупированную родную землю – эта тема осталась центральной и в послевоенные десятилетия, воплотившись в том числе в «Партизанской мадонне» Михаила Савицкого. В послевоенные десятилетия белорусская живопись достигла зрелости в жанрах портрета, пейзажа и монументальной исторической картины, а имена Ивана Ахремчика, Гавриила Ващенко, Мая Данцига и Михаила Савицкого определили её лицо.
             </p>
         </div>
 
         <!-- ===== 1. ФЕРДИНАНД РУЩИЦ ===== -->
-        <div class="hero-text" style="padding: 25px 25px 10px 25px; margin-bottom: 30px;">
-            <h3 style="font-family: 'Gelasio', serif; color: var(--color-accent); font-size: 28px; margin-bottom: 10px; text-align: center;">Фердинанд Рущиц (1870-1936)</h3>
-            <p style="text-align: center; font-family: 'Segoe UI', Arial, sans-serif; font-size: 15px; color: #777; font-style: italic; margin-bottom: 15px;">Символизм, экспрессивный пейзаж</p>
+        <div class="hero-text artist-block">
+            <h3 class="artist-name">Фердинанд Рущиц (1870-1936)</h3>
+            <p class="artist-style">Символизм, экспрессивный пейзаж</p>
 
-            <div style="text-align: center; margin-bottom: 15px;">
-                <img src="rushizh.jpg" alt="Беженцы (1902)" style="width: 100%; max-width: 500px; border-radius: 12px; border: 2px solid var(--color-accent);" />
-                <p style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 13px; color: #555; margin-top: 6px;">«Беженцы» (1902)</p>
+            <div class="artist-image-wrap">
+                <img src="rushizh.jpg" alt="Беженцы (1902)" class="artist-image" />
+                <p class="image-caption">«Беженцы» (1902)</p>
             </div>
 
-            <p style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 16px; line-height: 1.7; color: #333;">
+            <p class="artist-bio">
                 Фердинанд Рущиц родился в 1870 году в имении Богданово Ошмянского уезда Виленской губернии в шляхетской семье. Детство и юность прошли в Минске, где он окончил классическую гимназию. Поступил в Петербургскую академию художеств, где учился у Ивана Шишкина и Архипа Куинджи. После окончания учёбы вернулся в Богданово. Был профессором Академии изящных искусств в Кракове и Школы изящных искусств в Варшаве. Рущиц проявил себя не только как живописец, но и как выдающийся педагог, театральный декоратор и график. Умер в 1936 году в родном Богданове.
             </p>
 
-            <div style="background: rgba(139, 42, 61, 0.05); border-left: 4px solid var(--color-accent); padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0;">
-                <p style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 15px; font-weight: 600; color: var(--color-accent); margin-bottom: 8px;">Связь с историей</p>
-                <p style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 15px; line-height: 1.7; color: #444; margin: 0;">
+            <div class="history-note">
+                <p class="history-note-title">Связь с историей</p>
+                <p class="history-note-text">
                     Рущиц творил в эпоху глубоких социальных сдвигов, крестьянского малоземелья и массового исхода населения из родных краёв. Его полотно «Беженцы» (1902) – это одна из самых пронзительных картин белорусского искусства начала XX века. Через мрачный, гнетущий пейзаж и уходящие вдаль фигуры людей на телегах художник передал глубокую социальную трагедию белорусской деревни той эпохи – драму вынужденного ухода людей с родной земли в поисках лучшей доли и спасения. После 1917 года Рущиц активно занимался спасением культурного наследия региона: он стал одним из основателей и первым деканом факультета изящных искусств Университета Стефана Батория в Вильне, сохранив преемственность художественного образования в межвоенный период.
                 </p>
             </div>
 
-            <div style="margin-top: 15px; padding: 15px; border: 1px solid rgba(139, 42, 61, 0.2); border-radius: 8px;">
-                <p style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 15px; font-weight: 600; color: #333; margin-bottom: 8px;">Основные произведения (XX век):</p>
-                <ul style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 15px; line-height: 1.8; color: #444; margin: 0; padding-left: 20px;">
+            <div class="works-block">
+                <p class="works-title">Основные произведения (XX век):</p>
+                <ul class="works-list">
                     <li>«Беженцы» (1902)</li>
                     <li>«Млын в зимнее время» (1902)</li>
                     <li>«Облако» (1902)</li>
@@ -83,29 +281,29 @@
         </div>
 
         <!-- ===== 2. ЮДЕЛЬ ПЭН ===== -->
-        <div class="hero-text" style="padding: 25px 25px 10px 25px; margin-bottom: 30px;">
-            <h3 style="font-family: 'Gelasio', serif; color: var(--color-accent); font-size: 28px; margin-bottom: 10px; text-align: center;">Юдель Пэн (1854-1937)</h3>
-            <p style="text-align: center; font-family: 'Segoe UI', Arial, sans-serif; font-size: 15px; color: #777; font-style: italic; margin-bottom: 15px;">Реализм, бытовой жанр, еврейский национальный портрет</p>
+        <div class="hero-text artist-block">
+            <h3 class="artist-name">Юдель Пэн (1854-1937)</h3>
+            <p class="artist-style">Реализм, бытовой жанр, еврейский национальный портрет</p>
 
-            <div style="text-align: center; margin-bottom: 15px;">
-                <img src="pen.jpg" alt="Часовщик (1914)" style="width: 100%; max-width: 500px; border-radius: 12px; border: 2px solid var(--color-accent);" />
-                <p style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 13px; color: #555; margin-top: 6px;">«Часовщик» (1914)</p>
+            <div class="artist-image-wrap">
+                <img src="pen.jpg" alt="Часовщик (1914)" class="artist-image" />
+                <p class="image-caption">«Часовщик» (1914)</p>
             </div>
 
-            <p style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 16px; line-height: 1.7; color: #333;">
+            <p class="artist-bio">
                 Юдель Пэн родился в Новоалександровске, но вся его зрелая жизнь и творчество неразрывно связаны с Витебском. Окончил Петербургскую академию художеств. В 1892 году открыл в Витебске первую в Российской империи частную Школу рисования и живописи. Пэн стал первооткрывателем талантов: именно он заметил и воспитал Марка Шагала, Осипа Цадкина, Лазаря Лисицкого и многих других звёзд мирового авангарда. Трагически погиб в Витебске в 1937 году.
             </p>
 
-            <div style="background: rgba(139, 42, 61, 0.05); border-left: 4px solid var(--color-accent); padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0;">
-                <p style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 15px; font-weight: 600; color: var(--color-accent); margin-bottom: 8px;">Связь с историей</p>
-                <p style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 15px; line-height: 1.7; color: #444; margin: 0;">
+            <div class="history-note">
+                <p class="history-note-title">Связь с историей</p>
+                <p class="history-note-text">
                     Пэн задокументировал в искусстве уникальный пласт белорусской городской истории – мир еврейских местечек и ремесленного Витебска начала XX века. Его картина «Часовщик» (1914) детально воссоздаёт образ скромного труженика, погружённого в работу на фоне уходящего уклада предреволюционной эпохи. После революции 1917 года Пэн, несмотря на свой классический академический стиль, поддержал создание Витебского народного художественного училища, став в 1920-е годы важной фигурой Витебского художественного ренессанса. В 1927 году ему было присвоено звание «Заслуженный еврейский художник».
                 </p>
             </div>
 
-            <div style="margin-top: 15px; padding: 15px; border: 1px solid rgba(139, 42, 61, 0.2); border-radius: 8px;">
-                <p style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 15px; font-weight: 600; color: #333; margin-bottom: 8px;">Основные произведения (XX век):</p>
-                <ul style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 15px; line-height: 1.8; color: #444; margin: 0; padding-left: 20px;">
+            <div class="works-block">
+                <p class="works-title">Основные произведения (XX век):</p>
+                <ul class="works-list">
                     <li>«Старый портной» (1910-е)</li>
                     <li>«Слепой» (1912)</li>
                     <li>«Часовщик» (1914)</li>
@@ -116,29 +314,29 @@
         </div>
 
         <!-- ===== 3. ВИТОЛЬД БЯЛЫНИЦКИЙ-БИРУЛЯ ===== -->
-        <div class="hero-text" style="padding: 25px 25px 10px 25px; margin-bottom: 30px;">
-            <h3 style="font-family: 'Gelasio', serif; color: var(--color-accent); font-size: 28px; margin-bottom: 10px; text-align: center;">Витольд Бялыницкий-Бируля (1872-1957)</h3>
-            <p style="text-align: center; font-family: 'Segoe UI', Arial, sans-serif; font-size: 15px; color: #777; font-style: italic; margin-bottom: 15px;">Лирический импрессионистический пейзаж, реализм</p>
+        <div class="hero-text artist-block">
+            <h3 class="artist-name">Витольд Бялыницкий-Бируля (1872-1957)</h3>
+            <p class="artist-style">Лирический импрессионистический пейзаж, реализм</p>
 
-            <div style="text-align: center; margin-bottom: 15px;">
-                <img src="birula.webp" alt="Лёд прошёл (1930)" style="width: 100%; max-width: 500px; border-radius: 12px; border: 2px solid var(--color-accent);" />
-                <p style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 13px; color: #555; margin-top: 6px;">«Лёд прошёл» (1930)</p>
+            <div class="artist-image-wrap">
+                <img src="birula.webp" alt="Лёд прошёл (1930)" class="artist-image" />
+                <p class="image-caption">«Лёд прошёл» (1930)</p>
             </div>
 
-            <p style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 16px; line-height: 1.7; color: #333;">
+            <p class="artist-bio">
                 Витольд Каэтанович Бялыницкий-Бируля родился в 1872 году в имении Крынки Могилёвской губернии. Обучался в Киевской рисовальной школе, затем в Московском училище живописи, ваяния и зодчества под руководством Исаака Левитана. С начала 1900-х годов обосновался на даче-мастерской «Чайка» в Тверской губернии, но на протяжении всей жизни регулярно приезжал в Беларусь. В 1904 году удостоен звания академика. После революции успешно интегрировался в советскую культуру, став народным художником БССР в 1944 году. Умер в 1957 году.
             </p>
 
-            <div style="background: rgba(139, 42, 61, 0.05); border-left: 4px solid var(--color-accent); padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0;">
-                <p style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 15px; font-weight: 600; color: var(--color-accent); margin-bottom: 8px;">Связь с историей</p>
-                <p style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 15px; line-height: 1.7; color: #444; margin: 0;">
+            <div class="history-note">
+                <p class="history-note-title">Связь с историей</p>
+                <p class="history-note-text">
                     Творчество Бялыницкого-Бирули послужило эстетическим мостом, соединившим дореволюционные традиции пейзажной школы с советским искусством XX века. Его полотно «Лёд прошёл» (1930) – пример чистой поэтики природы, свободной от идеологического давления раннего советского периода. В послевоенные годы мастер приехал в освобождённый и разрушенный Минск, создав цикл работ («Цветущие яблони» и др.), которые метафорически зафиксировали возрождение мирной жизни в республике.
                 </p>
             </div>
 
-            <div style="margin-top: 15px; padding: 15px; border: 1px solid rgba(139, 42, 61, 0.2); border-radius: 8px;">
-                <p style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 15px; font-weight: 600; color: #333; margin-bottom: 8px;">Основные произведения (XX век):</p>
-                <ul style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 15px; line-height: 1.8; color: #444; margin: 0; padding-left: 20px;">
+            <div class="works-block">
+                <p class="works-title">Основные произведения (XX век):</p>
+                <ul class="works-list">
                     <li>«Зимний сон» (1911)</li>
                     <li>«Изумруд весны» (1915)</li>
                     <li>«Весна» (1910-е)</li>
@@ -149,29 +347,29 @@
         </div>
 
         <!-- ===== 4. ЯЗЭП ДРОЗДОВИЧ ===== -->
-        <div class="hero-text" style="padding: 25px 25px 10px 25px; margin-bottom: 30px;">
-            <h3 style="font-family: 'Gelasio', serif; color: var(--color-accent); font-size: 28px; margin-bottom: 10px; text-align: center;">Язэп Дроздович (1888-1954)</h3>
-            <p style="text-align: center; font-family: 'Segoe UI', Arial, sans-serif; font-size: 15px; color: #777; font-style: italic; margin-bottom: 15px;">Модерн, космический реализм, наивное искусство</p>
+        <div class="hero-text artist-block">
+            <h3 class="artist-name">Язэп Дроздович (1888-1954)</h3>
+            <p class="artist-style">Модерн, космический реализм, наивное искусство</p>
 
-            <div style="text-align: center; margin-bottom: 15px;">
-                <img src="drozdovich.jpg" alt="Триумф Вселенной (1930-е)" style="width: 100%; max-width: 500px; border-radius: 12px; border: 2px solid var(--color-accent);" />
-                <p style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 13px; color: #555; margin-top: 6px;">«Погоня» (1921)</p>
+            <div class="artist-image-wrap">
+                <img src="drozdovich.jpg" alt="Погоня (1921)" class="artist-image" />
+                <p class="image-caption">«Погоня» (1921)</p>
             </div>
 
-            <p style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 16px; line-height: 1.7; color: #333;">
+            <p class="artist-bio">
                 Язэп Дроздович родился в 1888 году в застенке Пуньки Дисненского уезда Виленской губернии. Учился в Виленской рисовальной школе Ивана Трутнева. Стал уникальной фигурой: живописцем, графиком, археологом, этнографом и писателем. В 1919–1921 годах иллюстрировал белорусские учебники и журналы в Минске. После Рижского мирного договора остался в Западной Беларуси. Странствовал по деревням, рисовал для крестьян уникальные расписные ковры за еду и кров, одновременно записывая фольклор. Умер в нищете в 1954 году.
             </p>
 
-            <div style="background: rgba(139, 42, 61, 0.05); border-left: 4px solid var(--color-accent); padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0;">
-                <p style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 15px; font-weight: 600; color: var(--color-accent); margin-bottom: 8px;">Связь с историей</p>
-                <p style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 15px; line-height: 1.7; color: #444; margin: 0;">
+            <div class="history-note">
+                <p class="history-note-title">Связь с историей</p>
+                <p class="history-note-text">
                     Историческая живопись Язэпа Дроздовича рассматривается исследователями как инструмент конструирования национального мифа в эпоху раздела белорусских земель. Его полотно «Погоня» (датируется 1921, 1922 или 1927 гг.; чаще связывается с 1921-м) ряд исследователей считает откликом на Рижский мирный договор 1921 года. Оказавшись в Западной Беларуси в условиях полонизации, художник переосмыслил древний герб: вместо воина с мечом изобразил на белом коне Ярилу — бога солнца и возрождения - с горящим факелом, символом просвещения. В этом видят ключевую идею национального возрождения: сохранение идентичности в моменты катастроф - не через насилие, а через культуру, просвещение и историческую память.
                 </p>
             </div>
 
-            <div style="margin-top: 15px; padding: 15px; border: 1px solid rgba(139, 42, 61, 0.2); border-radius: 8px;">
-                <p style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 15px; font-weight: 600; color: #333; margin-bottom: 8px;">Основные произведения (XX век):</p>
-                <ul style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 15px; line-height: 1.8; color: #444; margin: 0; padding-left: 20px;">
+            <div class="works-block">
+                <p class="works-title">Основные произведения (XX век):</p>
+                <ul class="works-list">
                     <li>«Триумф Вселенной» (1930-е)</li>
                     <li>«Жизнь на Марсе» (серия, 1931)</li>
                     <li>«Встреча весны на Сатурне» (1932)</li>
@@ -182,29 +380,29 @@
         </div>
 
         <!-- ===== 5. МАЙ ДАНЦИГ ===== -->
-        <div class="hero-text" style="padding: 25px 25px 10px 25px; margin-bottom: 30px;">
-            <h3 style="font-family: 'Gelasio', serif; color: var(--color-accent); font-size: 28px; margin-bottom: 10px; text-align: center;">Май Данциг (1930-2017)</h3>
-            <p style="text-align: center; font-family: 'Segoe UI', Arial, sans-serif; font-size: 15px; color: #777; font-style: italic; margin-bottom: 15px;">Соцреализм, «суровый стиль», экспрессионизм</p>
+        <div class="hero-text artist-block">
+            <h3 class="artist-name">Май Данциг (1930-2017)</h3>
+            <p class="artist-style">Соцреализм, «суровый стиль», экспрессионизм</p>
 
-            <div style="text-align: center; margin-bottom: 15px;">
-                <img src="minsk.jpg" alt="Мой Минск (1967)" style="width: 100%; max-width: 500px; border-radius: 12px; border: 2px solid var(--color-accent);" />
-                <p style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 13px; color: #555; margin-top: 6px;">«Мой Минск» (1967)</p>
+            <div class="artist-image-wrap">
+                <img src="minsk.jpg" alt="Мой Минск (1967)" class="artist-image" />
+                <p class="image-caption">«Мой Минск» (1967)</p>
             </div>
 
-            <p style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 16px; line-height: 1.7; color: #333;">
+            <p class="artist-bio">
                 Май Данциг родился в Минске в 1930 году. Окончил Минское художественное училище и Московский художественный институт им. Сурикова. Вернувшись в Беларусь, долгие годы преподавал в Белорусской государственной академии искусств, воспитав целое поколение художников. Стал одним из главных представителей «сурового стиля» в республике. Народный художник Беларуси (1995). Умер в Минске в 2017 году.
             </p>
 
-            <div style="background: rgba(139, 42, 61, 0.05); border-left: 4px solid var(--color-accent); padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0;">
-                <p style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 15px; font-weight: 600; color: var(--color-accent); margin-bottom: 8px;">Связь с историей</p>
-                <p style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 15px; line-height: 1.7; color: #444; margin: 0;">
+            <div class="history-note">
+                <p class="history-note-title">Связь с историей</p>
+                <p class="history-note-text">
                     Творчество Данцига неразрывно связано с бурным послевоенным восстановлением Беларуси. Его грандиозное полотно «Мой Минск» (1967) стало художественным гимном возрождённой столице БССР. Данциг показал город с высоты птичьего полёта как живой, динамичный и строящийся организм, символизирующий преодоление военных разрушений. Его картины зафиксировали дух советской «оттепели» и градостроительный оптимизм 1960–1970-х годов.
                 </p>
             </div>
 
-            <div style="margin-top: 15px; padding: 15px; border: 1px solid rgba(139, 42, 61, 0.2); border-radius: 8px;">
-                <p style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 15px; font-weight: 600; color: #333; margin-bottom: 8px;">Основные произведения (XX век):</p>
-                <ul style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 15px; line-height: 1.8; color: #444; margin: 0; padding-left: 20px;">
+            <div class="works-block">
+                <p class="works-title">Основные произведения (XX век):</p>
+                <ul class="works-list">
                     <li>«Сумерки в городе» (1960-е)</li>
                     <li>«Новосёлы» (1962)</li>
                     <li>«Мой Минск» (1967)</li>
@@ -215,29 +413,29 @@
         </div>
 
         <!-- ===== 6. МИХАИЛ САВИЦКИЙ ===== -->
-        <div class="hero-text" style="padding: 25px 25px 10px 25px; margin-bottom: 30px;">
-            <h3 style="font-family: 'Gelasio', serif; color: var(--color-accent); font-size: 28px; margin-bottom: 10px; text-align: center;">Михаил Савицкий (1922-2010)</h3>
-            <p style="text-align: center; font-family: 'Segoe UI', Arial, sans-serif; font-size: 15px; color: #777; font-style: italic; margin-bottom: 15px;">Соцреализм, «суровый стиль», монументальная живопись</p>
+        <div class="hero-text artist-block">
+            <h3 class="artist-name">Михаил Савицкий (1922-2010)</h3>
+            <p class="artist-style">Соцреализм, «суровый стиль», монументальная живопись</p>
 
-            <div style="text-align: center; margin-bottom: 15px;">
-                <img src="savitskiy.jpg" alt="Партизанская мадонна (1967)" style="width: 100%; max-width: 400px; border-radius: 12px; border: 2px solid var(--color-accent);" />
-                <p style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 13px; color: #555; margin-top: 6px;">«Партизанская мадонна» (1967)</p>
+            <div class="artist-image-wrap">
+                <img src="savitskiy.jpg" alt="Партизанская мадонна (1967)" class="artist-image artist-image-narrow" />
+                <p class="image-caption">«Партизанская мадонна» (1967)</p>
             </div>
 
-            <p style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 16px; line-height: 1.7; color: #333;">
+            <p class="artist-bio">
                 Михаил Савицкий родился в 1922 году в деревне Звенячи Витебской области. С началом Великой Отечественной войны ушёл на фронт, участвовал в обороне Севастополя. Попал в плен, прошёл через нацистские концлагеря (включая Бухенвальд и Дахау), где чудом выжил. После войны окончил институт им. Сурикова. Стал ключевой фигурой послевоенного белорусского искусства и руководителем Академических мастерских. Герой Беларуси (2006). Умер в Минске в 2010 году.
             </p>
 
-            <div style="background: rgba(139, 42, 61, 0.05); border-left: 4px solid var(--color-accent); padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0;">
-                <p style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 15px; font-weight: 600; color: var(--color-accent); margin-bottom: 8px;">Связь с историей</p>
-                <p style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 15px; line-height: 1.7; color: #444; margin: 0;">
+            <div class="history-note">
+                <p class="history-note-title">Связь с историей</p>
+                <p class="history-note-text">
                     Творчество Савицкого – это художественный документ трагедии и триумфа белорусского народа в XX веке. Его «Партизанская мадонна» (1967) переосмысляет традиционный образ Богородицы в реалиях тотальной партизанской войны на территории Беларуси. Написанная в экспрессивном «суровом стиле», картина лишена парадного пафоса, транслируя глубокую скорбь, святость материнства и несгибаемое мужество. Другой его масштабный исторический вклад – серия «Цифры на сердце» (1974–1979, 1987), ставшая мировым реквиемом жертвам нацизма.
                 </p>
             </div>
 
-            <div style="margin-top: 15px; padding: 15px; border: 1px solid rgba(139, 42, 61, 0.2); border-radius: 8px;">
-                <p style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 15px; font-weight: 600; color: #333; margin-bottom: 8px;">Основные произведения (XX век):</p>
-                <ul style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 15px; line-height: 1.8; color: #444; margin: 0; padding-left: 20px;">
+            <div class="works-block">
+                <p class="works-title">Основные произведения (XX век):</p>
+                <ul class="works-list">
                     <li>«Партизанская мадонна» (1967)</li>
                     <li>«Витебские ворота» (1967)</li>
                     <li>«Поле» (1974)</li>
