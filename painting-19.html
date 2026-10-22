@@ -5,6 +5,200 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Живопись XIX века - Искусство Беларуси</title>
     <link rel="stylesheet" href="style.css" />
+    <style>
+        /* ===== ЗАГОЛОВОК РАЗДЕЛА ===== */
+        .painting-section-title {
+            font-family: 'Georgia', serif;
+            color: var(--color-accent);
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        /* ===== КАРТОЧКА ХУДОЖНИКА ===== */
+        .artist-block {
+            padding: 25px 25px 10px 25px;
+            margin-bottom: 30px;
+        }
+
+        .artist-name {
+            font-family: 'Gelasio', serif;
+            color: var(--color-accent);
+            font-size: 28px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .artist-style {
+            text-align: center;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            font-size: 15px;
+            color: #777;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        .artist-image-wrap {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .artist-image {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 12px;
+            border: 2px solid var(--color-accent);
+        }
+
+        .image-caption {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            font-size: 13px;
+            color: #555;
+            margin-top: 6px;
+        }
+
+        .artist-bio {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.7;
+            color: #333;
+        }
+
+        /* ===== БЛОК «СВЯЗЬ С ИСТОРИЕЙ» ===== */
+        .history-note {
+            background: rgba(139, 42, 61, 0.05);
+            border-left: 4px solid var(--color-accent);
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .history-note-title {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--color-accent);
+            margin-bottom: 8px;
+        }
+
+        .history-note-text {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            font-size: 15px;
+            line-height: 1.7;
+            color: #444;
+            margin: 0;
+        }
+
+        /* ===== БЛОК «ОСНОВНЫЕ ПРОИЗВЕДЕНИЯ» ===== */
+        .works-block {
+            margin-top: 15px;
+            padding: 15px;
+            border: 1px solid rgba(139, 42, 61, 0.2);
+            border-radius: 8px;
+        }
+
+        .works-title {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .works-list {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            font-size: 15px;
+            line-height: 1.8;
+            color: #444;
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        /* ===== МОБИЛЬНАЯ АДАПТАЦИЯ ===== */
+        @media (max-width: 768px) {
+            .painting-section-title {
+                font-size: 22px;
+            }
+
+            .artist-block {
+                padding: 18px 16px 8px 16px;
+                margin-bottom: 22px;
+                border-radius: 12px;
+            }
+
+            .artist-name {
+                font-size: 21px;
+            }
+
+            .artist-style {
+                font-size: 13px;
+            }
+
+            .artist-bio {
+                font-size: 15px;
+                line-height: 1.6;
+            }
+
+            .history-note {
+                padding: 12px 14px;
+                margin: 12px 0;
+                border-radius: 0 8px 8px 0;
+            }
+
+            .history-note-title {
+                font-size: 14px;
+            }
+
+            .history-note-text {
+                font-size: 14px;
+                line-height: 1.6;
+            }
+
+            .works-block {
+                padding: 12px 14px;
+                margin-top: 12px;
+            }
+
+            .works-title {
+                font-size: 14px;
+            }
+
+            .works-list {
+                font-size: 14px;
+                line-height: 1.6;
+                padding-left: 18px;
+            }
+
+            .image-caption {
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .painting-section-title {
+                font-size: 20px;
+            }
+
+            .artist-block {
+                padding: 14px 12px 6px 12px;
+            }
+
+            .artist-name {
+                font-size: 19px;
+            }
+
+            .artist-bio,
+            .history-note-text,
+            .works-list {
+                font-size: 14px;
+            }
+
+            .artist-style,
+            .history-note-title,
+            .works-title {
+                font-size: 13px;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -43,23 +237,23 @@
 
         <!-- ===== ВВЕДЕНИЕ ===== -->
         <div class="literature-text-block">
-            <h2 style="font-family: 'Georgia', serif; color: var(--color-accent); font-size: 28px; margin-bottom: 10px;">Живопись Беларуси XIX века</h2>
+            <h2 class="painting-section-title">Живопись Беларуси XIX века</h2>
             <p>
                 Живопись Беларуси XIX века прошла путь от классицизма через романтизм к реализму. В условиях Российской империи, когда после 1840 года само название «Беларусь» было выведено из официального оборота, а земли именовались Северо-Западным краем, художники искали способы выразить национальную самобытность. Большинство мастеров, родившихся на белорусских землях, работали в России, Польше и Европе, но ментально сохраняли прочную связь с родиной. Академическая выучка, полученная в Петербурге и Вильне, сочеталась в их творчестве с глубоким интересом к народному быту, историческому прошлому и родной природе.
             </p>
         </div>
 
         <!-- ===== ЯН ДАМЕЛЬ ===== -->
-        <div class="hero-text" style="padding: 25px 25px 10px 25px; margin-bottom: 30px;">
-            <h3 style="font-family: 'Gelasio', serif; color: var(--color-accent); font-size: 28px; margin-bottom: 10px; text-align: center;">Ян Дамель (1780-1840)</h3>
-            <p style="text-align: center; font-family: 'Segoe UI', Arial, sans-serif; font-size: 15px; color: #777; font-style: italic; margin-bottom: 15px;">Классицизм, исторический жанр, портрет</p>
+        <div class="hero-text artist-block">
+            <h3 class="artist-name">Ян Дамель (1780-1840)</h3>
+            <p class="artist-style">Классицизм, исторический жанр, портрет</p>
 
-            <div style="text-align: center; margin-bottom: 15px;">
-                <img src="damel.webp" alt="Отступление французов через Вильно в 1812 году" style="width: 100%; max-width: 500px; border-radius: 12px; border: 2px solid var(--color-accent);" />
-                <p style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 13px; color: #555; margin-top: 6px;">«Отступление французов через Вильно в 1812 году» (1820-е гг.)</p>
+            <div class="artist-image-wrap">
+                <img src="damel.webp" alt="Отступление французов через Вильно в 1812 году" class="artist-image" />
+                <p class="image-caption">«Отступление французов через Вильно в 1812 году» (1820-е гг.)</p>
             </div>
 
-            <p style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 16px; line-height: 1.7; color: #333;">
+            <p class="artist-bio">
                 Ян Дамель родился в Митаве (ныне Елгава, Латвия) в семье купца.
                 Учился в Виленском университете на художественном отделении
                 у Франциска Смуглевича и Яна Рустема, где позже и сам преподавал.
@@ -70,16 +264,16 @@
                 живописцем Минщины. Похоронен в крипте Кальварийского костёла.
             </p>
 
-            <div style="background: rgba(139, 42, 61, 0.05); border-left: 4px solid var(--color-accent); padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0;">
-                <p style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 15px; font-weight: 600; color: var(--color-accent); margin-bottom: 8px;">Связь с историей</p>
-                <p style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 15px; line-height: 1.7; color: #444; margin: 0;">
+            <div class="history-note">
+                <p class="history-note-title">Связь с историей</p>
+                <p class="history-note-text">
                     Работа «Отступление французов через Вильно в 1812 году» (1820-е гг.) — это литография по авторскому рисунку, раскрашенная акварелью. Дамель был очевидцем событий в Вильне: отступающая армия Наполеона вошла в город истощённой, страдающей от холода и болезней. Художник отказался от парадного пафоса войны: вместо прославления победителей он изобразил трагедию замерзающих, деморализованных солдат на фоне заснеженных улиц. Картина стала художественным документом краха наполеоновской эпохи, которая принесла разочарование местной шляхте, надеявшейся с помощью Наполеона восстановить независимость Великого Княжества Литовского. Дамель показал изнанку имперских амбиций, где простые люди становятся жертвами геополитических катастроф.
                 </p>
             </div>
 
-            <div style="margin-top: 15px; padding: 15px; border: 1px solid rgba(139, 42, 61, 0.2); border-radius: 8px;">
-                <p style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 15px; font-weight: 600; color: #333; margin-bottom: 8px;">Основные произведения:</p>
-                <ul style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 15px; line-height: 1.8; color: #444; margin: 0; padding-left: 20px;">
+            <div class="works-block">
+                <p class="works-title">Основные произведения:</p>
+                <ul class="works-list">
                     <li>«Автопортрет» (1817)</li>
                     <li>«Отступление французов через Вильно в 1812 году» (1820-е гг.)</li>
                     <li>«Портрет Шимона Малевского»</li>
@@ -89,16 +283,16 @@
         </div>
 
         <!-- ===== ЯНУАРИЙ СУХОДОЛЬСКИЙ ===== -->
-        <div class="hero-text" style="padding: 25px 25px 10px 25px; margin-bottom: 30px;">
-            <h3 style="font-family: 'Gelasio', serif; color: var(--color-accent); font-size: 28px; margin-bottom: 10px; text-align: center;">Януарий Суходольский (1797-1875)</h3>
-            <p style="text-align: center; font-family: 'Segoe UI', Arial, sans-serif; font-size: 15px; color: #777; font-style: italic; margin-bottom: 15px;">Батальный жанр, романтический реализм</p>
+        <div class="hero-text artist-block">
+            <h3 class="artist-name">Януарий Суходольский (1797-1875)</h3>
+            <p class="artist-style">Батальный жанр, романтический реализм</p>
 
-            <div style="text-align: center; margin-bottom: 15px;">
-                <img src="shturm.jpg" alt="Штурм крепости Ахалцых (1839)" style="width: 100%; max-width: 500px; border-radius: 12px; border: 2px solid var(--color-accent);" />
-                <p style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 13px; color: #555; margin-top: 6px;">«Штурм крепости Ахалцых» (1839)</p>
+            <div class="artist-image-wrap">
+                <img src="shturm.jpg" alt="Штурм крепости Ахалцых (1839)" class="artist-image" />
+                <p class="image-caption">«Штурм крепости Ахалцых» (1839)</p>
             </div>
 
-            <p style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 16px; line-height: 1.7; color: #333;">
+            <p class="artist-bio">
                 Януарий Суходольский родился в Гродно в обедневшей шляхетской семье.
                 Выбрал военную карьеру: окончил кадетский корпус, служил офицером
                 и стал адъютантом генерала Винцента Красинского. Любовь к живописи
@@ -110,16 +304,16 @@
                 а также в Гродно и Варшаве, получив статус академика.
             </p>
 
-            <div style="background: rgba(139, 42, 61, 0.05); border-left: 4px solid var(--color-accent); padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0;">
-                <p style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 15px; font-weight: 600; color: var(--color-accent); margin-bottom: 8px;">Связь с историей</p>
-                <p style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 15px; line-height: 1.7; color: #444; margin: 0;">
+            <div class="history-note">
+                <p class="history-note-title">Связь с историей</p>
+                <p class="history-note-text">
                     Картина «Штурм крепости Ахалцых» (1839) посвящена конкретному событию Русско-турецкой войны 1828–1829 годов — взятию турецкой крепости Ахалцых русскими войсками 15 августа 1828 года. Суходольский, сам бывший военным, создал не парадное полотно, а показал жестокость штурма: сражение среди огня, дыма и удушающего смрада. Для белорусского зрителя эта работа важна тем, что её автор — уроженец Гродно, прошедший путь от повстанца 1830–1831 годов до академика, — запечатлел войну как тяжёлый труд и страдание простых солдат, а не как триумф империи.
                 </p>
             </div>
 
-            <div style="margin-top: 15px; padding: 15px; border: 1px solid rgba(139, 42, 61, 0.2); border-radius: 8px;">
-                <p style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 15px; font-weight: 600; color: #333; margin-bottom: 8px;">Основные произведения:</p>
-                <ul style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 15px; line-height: 1.8; color: #444; margin: 0; padding-left: 20px;">
+            <div class="works-block">
+                <p class="works-title">Основные произведения:</p>
+                <ul class="works-list">
                     <li>«Штурм крепости Ахалцых» (1839)</li>
                     <li>«Осада крепости Абасабад»</li>
                     <li>«Сдача штандартов у Джаван-Булака»</li>
@@ -130,16 +324,16 @@
         </div>
 
         <!-- ===== ВАЛЕНТИЙ ВАНЬКОВИЧ ===== -->
-        <div class="hero-text" style="padding: 25px 25px 10px 25px; margin-bottom: 30px;">
-            <h3 style="font-family: 'Gelasio', serif; color: var(--color-accent); font-size: 28px; margin-bottom: 10px; text-align: center;">Валентий Ванькович (1799/1800-1842)</h3>
-            <p style="text-align: center; font-family: 'Segoe UI', Arial, sans-serif; font-size: 15px; color: #777; font-style: italic; margin-bottom: 15px;">Романтизм, портретный жанр</p>
+        <div class="hero-text artist-block">
+            <h3 class="artist-name">Валентий Ванькович (1799/1800-1842)</h3>
+            <p class="artist-style">Романтизм, портретный жанр</p>
 
-            <div style="text-align: center; margin-bottom: 15px;">
-                <img src="mitskevich.jpg" alt="Мицкевич на скале Аю-Даг (1828)" style="width: 100%; max-width: 500px; border-radius: 12px; border: 2px solid var(--color-accent);" />
-                <p style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 13px; color: #555; margin-top: 6px;">«Мицкевич на скале Аю-Даг» (1828)</p>
+            <div class="artist-image-wrap">
+                <img src="mitskevich.jpg" alt="Мицкевич на скале Аю-Даг (1828)" class="artist-image" />
+                <p class="image-caption">«Мицкевич на скале Аю-Даг» (1828)</p>
             </div>
 
-            <p style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 16px; line-height: 1.7; color: #333;">
+            <p class="artist-bio">
                 Валентий Ванькович родился в имении Калужицы Минской губернии
                 в старинной шляхетской семье (год рождения — 1799 или 1800).
                 Начальное образование получил в Полоцкой иезуитской коллегии,
@@ -152,16 +346,16 @@
                 от туберкулёза на руках близкого друга Адама Мицкевича.
             </p>
 
-            <div style="background: rgba(139, 42, 61, 0.05); border-left: 4px solid var(--color-accent); padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0;">
-                <p style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 15px; font-weight: 600; color: var(--color-accent); margin-bottom: 8px;">Связь с историей</p>
-                <p style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 15px; line-height: 1.7; color: #444; margin: 0;">
+            <div class="history-note">
+                <p class="history-note-title">Связь с историей</p>
+                <p class="history-note-text">
                     Портрет «Мицкевич на скале Аю-Даг» (1828) стал хрестоматийным манифестом романтизма и духовным символом поколения белорусской интеллигенции 1820–1830-х годов. Ванькович написал его в Санкт-Петербурге под впечатлением от цикла Адама Мицкевича «Крымские сонеты» (1826), особенно от сонета «Аюдаг». Поэт был сослан царскими властями в центральные губернии России за участие в тайных обществах «филоматов» и «филаретов»; поездка в Крым была уже оттуда. Фигура Мицкевича в кавказской бурке, припавшего к скале на фоне бушующего моря, метафорически отражала трагедию «внутренней эмиграции» и тоску по потерянной родине, которую переживала вся разгромленная культурная элита края.
                 </p>
             </div>
 
-            <div style="margin-top: 15px; padding: 15px; border: 1px solid rgba(139, 42, 61, 0.2); border-radius: 8px;">
-                <p style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 15px; font-weight: 600; color: #333; margin-bottom: 8px;">Основные произведения:</p>
-                <ul style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 15px; line-height: 1.8; color: #444; margin: 0; padding-left: 20px;">
+            <div class="works-block">
+                <p class="works-title">Основные произведения:</p>
+                <ul class="works-list">
                     <li>«Мицкевич на скале Аю-Даг» (1828)</li>
                     <li>«Портрет Войцеха Пулавского»</li>
                     <li>«Портрет мужчины в жёлтом жилете»</li>
@@ -173,16 +367,16 @@
         </div>
 
         <!-- ===== ИВАН ХРУЦКИЙ ===== -->
-        <div class="hero-text" style="padding: 25px 25px 10px 25px; margin-bottom: 30px;">
-            <h3 style="font-family: 'Gelasio', serif; color: var(--color-accent); font-size: 28px; margin-bottom: 10px; text-align: center;">Иван Хруцкий (1810-1885)</h3>
-            <p style="text-align: center; font-family: 'Segoe UI', Arial, sans-serif; font-size: 15px; color: #777; font-style: italic; margin-bottom: 15px;">Академизм, реализм, натюрморт, портрет</p>
+        <div class="hero-text artist-block">
+            <h3 class="artist-name">Иван Хруцкий (1810-1885)</h3>
+            <p class="artist-style">Академизм, реализм, натюрморт, портрет</p>
 
-            <div style="text-align: center; margin-bottom: 15px;">
-                <img src="semashko.jpg" alt="Портрет Иосифа Семашко (1842)" style="width: 100%; max-width: 500px; border-radius: 12px; border: 2px solid var(--color-accent);" />
-                <p style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 13px; color: #555; margin-top: 6px;">«Портрет Иосифа Семашко» (1842)</p>
+            <div class="artist-image-wrap">
+                <img src="semashko.jpg" alt="Портрет Иосифа Семашко (1842)" class="artist-image" />
+                <p class="image-caption">«Портрет Иосифа Семашко» (1842)</p>
             </div>
 
-            <p style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 16px; line-height: 1.7; color: #333;">
+            <p class="artist-bio">
                 Иван Хруцкий родился в местечке Ула Витебской губернии в семье
                 греко-католического (униатского) священника. Обучался в Полоцком
                 высшем пиарском училище, затем уехал в Петербург, где стал
@@ -195,16 +389,16 @@
                 камерному искусству, отражающему жизнь родного края.
             </p>
 
-            <div style="background: rgba(139, 42, 61, 0.05); border-left: 4px solid var(--color-accent); padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0;">
-                <p style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 15px; font-weight: 600; color: var(--color-accent); margin-bottom: 8px;">Связь с историей</p>
-                <p style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 15px; line-height: 1.7; color: #444; margin: 0;">
+            <div class="history-note">
+                <p class="history-note-title">Связь с историей</p>
+                <p class="history-note-text">
                     «Портрет Иосифа Семашко» (1842) напрямую связан с одной из самых драматичных вех в истории Беларуси — Полоцким церковным собором 1839 года, который ликвидировал Униатскую (греко-католическую) церковь в Российской империи и перевёл более 1,5 миллиона белорусских крестьян в православие. Хруцкий, будучи сыном униатского священника, по иронии судьбы с 1845 по 1855 год выполнял многочисленные заказы своего покровителя — литовского митрополита Иосифа Семашко, главного инициатора этой конфессиональной реформы. Портрет 1842 года — один из ранних в этой серии — зафиксировал момент окончательного идеологического и религиозного поглощения белорусских земель империей.
                 </p>
             </div>
 
-            <div style="margin-top: 15px; padding: 15px; border: 1px solid rgba(139, 42, 61, 0.2); border-radius: 8px;">
-                <p style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 15px; font-weight: 600; color: #333; margin-bottom: 8px;">Основные произведения:</p>
-                <ul style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 15px; line-height: 1.8; color: #444; margin: 0; padding-left: 20px;">
+            <div class="works-block">
+                <p class="works-title">Основные произведения:</p>
+                <ul class="works-list">
                     <li>«Плоды и цветы» (1838)</li>
                     <li>«Портрет Иосифа Семашко» (1842)</li>
                     <li>«Портрет жены» (1845)</li>
@@ -216,17 +410,17 @@
             </div>
         </div>
 
-         <!-- ===== КАЗИМИР АЛЬХИМОВИЧ ===== -->
-        <div class="hero-text" style="padding: 25px 25px 10px 25px; margin-bottom: 30px;">
-            <h3 style="font-family: 'Gelasio', serif; color: var(--color-accent); font-size: 28px; margin-bottom: 10px; text-align: center;">Казимир Альхимович (1840-1916)</h3>
-            <p style="text-align: center; font-family: 'Segoe UI', Arial, sans-serif; font-size: 15px; color: #777; font-style: italic; margin-bottom: 15px;">Романтизм, исторический и бытовой жанр</p>
+        <!-- ===== КАЗИМИР АЛЬХИМОВИЧ ===== -->
+        <div class="hero-text artist-block">
+            <h3 class="artist-name">Казимир Альхимович (1840-1916)</h3>
+            <p class="artist-style">Романтизм, исторический и бытовой жанр</p>
 
-            <div style="text-align: center; margin-bottom: 15px;">
-                <img src="alhimovich.jpg" alt="Похороны Гедимина (1888)" style="width: 100%; max-width: 500px; border-radius: 12px; border: 2px solid var(--color-accent);" />
-                <p style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 13px; color: #555; margin-top: 6px;">«Похороны Гедимина» (1888)</p>
+            <div class="artist-image-wrap">
+                <img src="alhimovich.jpg" alt="Похороны Гедимина (1888)" class="artist-image" />
+                <p class="image-caption">«Похороны Гедимина» (1888)</p>
             </div>
 
-            <p style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 16px; line-height: 1.7; color: #333;">
+            <p class="artist-bio">
                 Казимир Альхимович родился в имении Демброво Лидского уезда.
                 После окончания гражданской гимназии в Вильне работал управляющим
                 имением. В 1863 году примкнул к Январскому восстанию Кастуся
@@ -237,28 +431,16 @@
                 романтиков исторического жанра.
             </p>
 
-            <div style="background: rgba(139, 42, 61, 0.05); border-left: 4px solid var(--color-accent); padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0;">
-                <p style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 15px; font-weight: 600; color: var(--color-accent); margin-bottom: 8px;">Связь с историей</p>
-                <p style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 15px; line-height: 1.7; color: #444; margin: 0;">
-                    Полотно «Похороны Гедимина» (1888) было создано в период жёсткой
-                    русификации конца XIX века, когда любые упоминания о былой
-                    автономии края пресекались. Альхимович обратился к эпохе
-                    могущества Великого Княжества Литовского — к событию 1341 года,
-                    когда великий князь Гедимин погиб при осаде крепости крестоносцев.
-                    Изображая глубокую скорбь языческих жрецов-вейделотов, рыцарей
-                    и простых людей у погребального костра великого князя на фоне
-                    дикой, суровой природы, художник создавал мощный национальный
-                    миф. Картина напоминала белорусам о древней независимости,
-                    сильных корнях и самобытной государственности, утраченной
-                    в составе империи. В 1888 году полотно было удостоено первой
-                    премии в Санкт-Петербурге, а год спустя — бронзовой медали
-                    в Париже.
+            <div class="history-note">
+                <p class="history-note-title">Связь с историей</p>
+                <p class="history-note-text">
+                    Полотно «Похороны Гедимина» (1888) было создано в период жёсткой русификации конца XIX века, когда любые упоминания о былой автономии края пресекались. Альхимович обратился к эпохе могущества Великого Княжества Литовского — к событию 1341 года, когда великий князь Гедимин погиб при осаде крепости крестоносцев. Изображая глубокую скорбь языческих жрецов-вейделотов, рыцарей и простых людей у погребального костра великого князя на фоне дикой, суровой природы, художник создавал мощный национальный миф. Картина напоминала белорусам о древней независимости, сильных корнях и самобытной государственности, утраченной в составе империи. В 1888 году полотно было удостоено первой премии в Санкт-Петербурге, а год спустя — бронзовой медали в Париже.
                 </p>
             </div>
 
-            <div style="margin-top: 15px; padding: 15px; border: 1px solid rgba(139, 42, 61, 0.2); border-radius: 8px;">
-                <p style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 15px; font-weight: 600; color: #333; margin-bottom: 8px;">Основные произведения:</p>
-                <ul style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 15px; line-height: 1.8; color: #444; margin: 0; padding-left: 20px;">
+            <div class="works-block">
+                <p class="works-title">Основные произведения:</p>
+                <ul class="works-list">
                     <li>«Похороны Гедимина» (1888)</li>
                     <li>«Портрет отца»</li>
                     <li>«Голова девочки»</li>
@@ -268,16 +450,16 @@
         </div>
 
         <!-- ===== НИКОДИМ СИЛИВАНОВИЧ ===== -->
-        <div class="hero-text" style="padding: 25px 25px 10px 25px; margin-bottom: 30px;">
-            <h3 style="font-family: 'Gelasio', serif; color: var(--color-accent); font-size: 28px; margin-bottom: 10px; text-align: center;">Никодим Силиванович (1834-1919)</h3>
-            <p style="text-align: center; font-family: 'Segoe UI', Arial, sans-serif; font-size: 15px; color: #777; font-style: italic; margin-bottom: 15px;">Академический реализм, портрет, жанровая живопись, мозаика</p>
+        <div class="hero-text artist-block">
+            <h3 class="artist-name">Никодим Силиванович (1834-1919)</h3>
+            <p class="artist-style">Академический реализм, портрет, жанровая живопись, мозаика</p>
 
-            <div style="text-align: center; margin-bottom: 15px;">
-                <img src="silivanovich.webp" alt="Старый пастух (1884)" style="width: 100%; max-width: 500px; border-radius: 12px; border: 2px solid var(--color-accent);" />
-                <p style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 13px; color: #555; margin-top: 6px;">«Старый пастух» (1884)</p>
+            <div class="artist-image-wrap">
+                <img src="silivanovich.webp" alt="Старый пастух (1884)" class="artist-image" />
+                <p class="image-caption">«Старый пастух» (1884)</p>
             </div>
 
-            <p style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 16px; line-height: 1.7; color: #333;">
+            <p class="artist-bio">
                 Никодим Силиванович родился в деревне Цинцевичи Вилейского уезда
                 Минской губернии в крестьянской семье. Его уникальный талант был
                 замечен местной шляхтой, которая помогла юноше поступить
@@ -292,26 +474,16 @@
                 Брюллова. Под конец жизни вернулся на родину в Беларусь.
             </p>
 
-            <div style="background: rgba(139, 42, 61, 0.05); border-left: 4px solid var(--color-accent); padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0;">
-                <p style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 15px; font-weight: 600; color: var(--color-accent); margin-bottom: 8px;">Связь с историей</p>
-                <p style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 15px; line-height: 1.7; color: #444; margin: 0;">
-                    Полотно «Старый пастух» (1884) напрямую связано с коренными
-                    пореформенными изменениями в социально-экономической жизни
-                    белорусской деревни во второй половине XIX века. После отмены
-                    крепостного права 1861 года началось медленное, но неизбежное
-                    разрушение патриархального уклада. Будучи выходцем из крестьянской
-                    среды, Силиванович с глубоким психологизмом и этнографической
-                    точностью зафиксировал уходящую натуру. На картине изображён
-                    пожилой белорусский пастух, чей образ олицетворяет мудрость,
-                    тяжёлый исторический опыт и смирение целого поколения
-                    белорусского крестьянства, ставшего в ту эпоху главным носителем
-                    национальной культуры и языка в условиях имперского давления.
+            <div class="history-note">
+                <p class="history-note-title">Связь с историей</p>
+                <p class="history-note-text">
+                    Полотно «Старый пастух» (1884) напрямую связано с коренными пореформенными изменениями в социально-экономической жизни белорусской деревни во второй половине XIX века. После отмены крепостного права 1861 года началось медленное, но неизбежное разрушение патриархального уклада. Будучи выходцем из крестьянской среды, Силиванович с глубоким психологизмом и этнографической точностью зафиксировал уходящую натуру. На картине изображён пожилой белорусский пастух, чей образ олицетворяет мудрость, тяжёлый исторический опыт и смирение целого поколения белорусского крестьянства, ставшего в ту эпоху главным носителем национальной культуры и языка в условиях имперского давления.
                 </p>
             </div>
 
-            <div style="margin-top: 15px; padding: 15px; border: 1px solid rgba(139, 42, 61, 0.2); border-radius: 8px;">
-                <p style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 15px; font-weight: 600; color: #333; margin-bottom: 8px;">Основные произведения:</p>
-                <ul style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 15px; line-height: 1.8; color: #444; margin: 0; padding-left: 20px;">
+            <div class="works-block">
+                <p class="works-title">Основные произведения:</p>
+                <ul class="works-list">
                     <li>«Старый пастух» (1884)</li>
                     <li>«Пастух из Свентянщины»</li>
                     <li>«Портрет отца»</li>
