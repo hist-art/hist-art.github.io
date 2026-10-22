@@ -5,6 +5,154 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Литература - Искусство Беларуси XIX-XX вв.</title>
     <link rel="stylesheet" href="style.css" />
+    <style>
+        /* ===== БАЗА ДЛЯ СТИХОТВОРЕНИЙ В СЕТКЕ ===== */
+        .poem-grid {
+            display: grid;
+            gap: 0;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 12px;
+            margin-bottom: 15px;
+            border: 1px solid rgba(139, 42, 61, 0.15);
+            font-family: 'Georgia', serif;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        .poem-grid.two {
+            grid-template-columns: 1fr 2px 1fr;
+            padding: 20px 0;
+            font-size: 16px;
+        }
+
+        .poem-grid.three {
+            grid-template-columns: 1fr 2px 1fr 2px 1fr;
+            padding: 20px 0;
+            font-size: 15px;
+        }
+
+        .poem-grid.long {
+            grid-template-columns: 1.5fr 2px 1.5fr 2px 1.5fr;
+            padding: 16px 0;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .poem-col {
+            padding: 0 15px;
+        }
+
+        .poem-grid.long .poem-col {
+            padding: 0 10px;
+        }
+
+        .poem-sep {
+            width: 100%;
+            height: 100%;
+            min-height: 280px;
+            background: var(--color-accent);
+            opacity: 0.35;
+            align-self: stretch;
+        }
+
+        .poem-grid.long .poem-sep {
+            min-height: 600px;
+        }
+
+        /* ===== МОБИЛЬНАЯ АДАПТАЦИЯ ===== */
+        @media (max-width: 768px) {
+            .poem-grid.two,
+            .poem-grid.three,
+            .poem-grid.long {
+                grid-template-columns: 1fr;
+                padding: 16px 0;
+                font-size: 15px;
+            }
+
+            .poem-grid.long {
+                font-size: 14px;
+            }
+
+            .poem-grid.two .poem-col,
+            .poem-grid.three .poem-col,
+            .poem-grid.long .poem-col {
+                padding: 0 16px;
+            }
+
+            .poem-sep {
+                width: 60%;
+                height: 2px;
+                min-height: 2px;
+                margin: 15px auto;
+                align-self: center;
+            }
+
+            .poem-grid.long .poem-sep {
+                min-height: 2px;
+            }
+
+            /* Старая разметка стихотворения «Да мілых мужычкоў» */
+            .poem-three-columns {
+                grid-template-columns: 1fr !important;
+                padding: 16px 0 !important;
+            }
+
+            .poem-column {
+                padding: 0 16px !important;
+            }
+
+            .poem-three-columns .poem-divider {
+                width: 60% !important;
+                height: 2px !important;
+                min-height: 2px !important;
+                margin: 15px auto !important;
+            }
+
+            /* Карточки произведений */
+            .author-work {
+                padding: 15px 16px !important;
+                margin-bottom: 22px !important;
+                border-radius: 12px !important;
+            }
+
+            .author-work h4 {
+                font-size: 18px !important;
+                margin-bottom: 12px !important;
+                padding-bottom: 8px !important;
+            }
+
+            .literature-text-block h3 {
+                font-size: 20px !important;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .poem-grid.two,
+            .poem-grid.three {
+                font-size: 14px;
+            }
+
+            .poem-grid.long {
+                font-size: 13px;
+            }
+
+            .poem-col {
+                padding: 0 12px !important;
+            }
+
+            .author-work {
+                padding: 12px 12px !important;
+            }
+
+            .author-work h4 {
+                font-size: 16px !important;
+            }
+
+            .literature-text-block h3 {
+                font-size: 18px !important;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -175,9 +323,9 @@
         «Кепска будзе!» (1891)
     </h4>
 
-<div style="display: grid; grid-template-columns: 1.5fr 2px 1.5fr 2px 1.5fr; gap: 0; background: rgba(255, 255, 255, 0.5); border-radius: 12px; padding: 16px 0; margin-bottom: 15px; border: 1px solid rgba(139, 42, 61, 0.15); font-family: 'Georgia', serif; font-size: 14px; line-height: 1.7; color: #333;">
+<div class="poem-grid long">
     
-    <div style="padding: 0 10px;">
+    <div class="poem-col">
         Як я толькі нарадзіўся -<br>
         Бацька сказаў: «Кепска будзе!»<br>
         Ну дык жа ж не памыліўся:<br>
@@ -333,9 +481,9 @@
         Ды ураднік заблукаўся.
     </div>
 
-    <div style="width: 100%; min-height: 600px; background: var(--color-accent); opacity: 0.3; align-self: stretch;"></div>
+    <div class="poem-sep"></div>
 
-    <div style="padding: 0 10px;">
+    <div class="poem-col">
         Я сяджу сабе на печы,<br>
         Пляту лапці, ўю аборы,<br>
         Ён паказуе праз плечы:<br>
@@ -488,9 +636,9 @@
       Покі вернешся дадому!»
     </div>
 
-    <div style="width: 100%; min-height: 600px; background: var(--color-accent); opacity: 0.3; align-self: stretch;"></div>
+    <div class="poem-sep"></div>
 
-    <div style="padding: 0 10px;">
+    <div class="poem-col">
       Я спалохаўся, баюся.<br>
       «Войча наш!» - кажу, малюся...<br>
       Бог даў спомніць: залатоўка<br>
@@ -799,7 +947,7 @@
             <strong>Ціхон.</strong> Хрэн табе ў вочы, - каб прынаймні шкура была цэла, а то як дабярэцца да яе, будзе нячысты інтэрас!
         </p>
         <p style="text-align: justify; text-indent: 25px;">
-            <strong>Кручкоў</strong> (устаў і выходзіць з папераю на сярэдзіну сцэны). Слухайце з увагаю!.. (Усе кланяюцца.) Буду чытаць дэкрэт. (Зноў кланяюцца.) Па указу его імператарскаго вялічаства, во врэменном прысуцтвіі, в комплекце, саставленном із участковага заседацеля і его пісьмавадзіцеля, слушалі дзело, коего абстаяцельства следуюшчыя: Іван Цюхай-Ліпскі назвал Ціхона Протасавіцкаго мужыком; тот за такую обіду пабіл Ліпскаго, на что сей последній прэдставіл і свідзецелей. Расследовав таковое дзело, врэменнае прысуцтвіе, сообразно указу всеміласцівейшаго гасудара Пятра Вялікаго в 1688 г. марта 69 дня паследававшего і прымяняясь к Статуту літоўскаму раздела 5-га, параграфа 18-га, - опрэдзеліло: а) Ціхону Протосавіцкаму, как угалоўнаму прэступніку, назначается: 1-е) 25 лоз на голай земле без дывана, і 2-е) штрафа 25 руб. в пользу врэменнаго прысуцтвія; б) Івану Цюхаю-Ліпскаму, как нанёсшаму лічнае аскарбленіе Протосавіцкаму, назначается: 1-е) 15 лоз на дыване і 2-е) 15 руб. штрафа в пользу врэменнаго прысуцтвія; в) свідзецелям, каторыя відзелі драку і не разнялі дзерушчыхся, - 1-е) па 10 лоз на дыване і 2-е) па 10 руб. штрафа в пользу врэменнаго прысуцтвія; д) всей прочэй шляхце, каторая не відзела дракі, за то, што не відзела, а цем самым не магла і разняць дзерушчыхся, назначается: 1-е) па 5 лоз на дыване і 2-е) па 5 руб. штрафа в пользу того же прысуцтвія. Напаследак: г) прымяняясь к указу яе вялічаства Анны Іаанаўны 1764 г. акцябра 45-га чысла за негербовую бумагу, упатрэблённую і імеюшчуюся ўпатрэбіцца па сему дзелу, - Протосавіцкі 5, Ліпскі 3, свідзецелі па 2, а все прочыя па 1 рублю ўплоцят... Кончэна! Цяпер зборшчык няхай збірае грошы, пасля жа прымемся за лазу.
+            <strong>Кручкоў</strong> (устаў і выходзіць з папераю на сярэдзіну сцэны). Слухайце з увагаю!.. (Усе кланяюцца.) Буду чытаць дэкрэт. (Зноў кланяюцца.) Па указу его імператарскаго вялічаства, во врэменном прысуцтвіі, в комплекце, саставленном із участковага заседацеля і его пісьмавадзіцеля, слушалі дзело, коего абстаяцельства следуюшчыя: Іван Цюхай-Ліпскі назвал Ціхона Протасавіцкаго мужыком; тот за такую обіду пабіл Ліпскаго, на что сей последній прэдставіл і свідзецелей. Расследовав таковое дзело, врэменнае прысуцтвіе, сообразно указу всеміласцівейшаго гасудара Пятра Вялікаго в 1688 г. марта 69 дня паследававшего і прымяняясь к Статуту літоўскаму раздела 5-га, параграфа 18-га, - опрэдзеліло: а) Ціхону Протосавіцкаму, как угалоўнаму прэступніку, назначается: 1-е) 25 лоз на голай земле без дывана, і 2-е) штрафа 25 руб. в пользу врэменнаго прысуцтвія; б) Івану Цюхаю-Ліпскаму, как нанёсшаму лічнае аскарбленіе Протасавіцкаму, назначается: 1-е) 15 лоз на дыване і 2-е) 15 руб. штрафа в пользу врэменнаго прысуцтвія; в) свідзецелям, каторыя відзелі драку і не разнялі дзерушчыхся, - 1-е) па 10 лоз на дыване і 2-е) па 10 руб. штрафа в пользу врэменнаго прысуцтвія; д) всей прочэй шляхце, каторая не відзела дракі, за то, што не відзела, а цем самым не магла і разняць дзерушчыхся, назначается: 1-е) па 5 лоз на дыване і 2-е) па 5 руб. штрафа в пользу того же прысуцтвія. Напаследак: г) прымяняясь к указу яе вялічаства Анны Іаанаўны 1764 г. акцябра 45-га чысла за негербовую бумагу, упатрэблённую і імеюшчуюся ўпатрэбіцца па сему дзелу, - Протасавіцкі 5, Ліпскі 3, свідзецелі па 2, а все прочыя па 1 рублю ўплоцят... Кончэна! Цяпер зборшчык няхай збірае грошы, пасля жа прымемся за лазу.
         </p>
     </div>
 
@@ -828,9 +976,9 @@
         «А хто там ідзе?» (1905-1908)
     </h4>
 
-    <div style="display: grid; grid-template-columns: 1fr 2px 1fr; gap: 0; background: rgba(255, 255, 255, 0.5); border-radius: 12px; padding: 20px 0; margin-bottom: 15px; border: 1px solid rgba(139, 42, 61, 0.15); font-family: 'Georgia', serif; font-size: 16px; line-height: 1.8; color: #333;">
+    <div class="poem-grid two">
         
-        <div style="padding: 0 20px;">
+        <div class="poem-col">
             А хто там ідзе, а хто там ідзе<br>
             У агромністай такой грамадзе?<br><br>
             - Беларусы.<br><br>
@@ -842,9 +990,9 @@
             - На свет цэлы.
         </div>
 
-        <div style="width: 100%; height: 100%; min-height: 280px; background: var(--color-accent); opacity: 0.35; align-self: stretch;"></div>
+        <div class="poem-sep"></div>
 
-        <div style="padding: 0 20px;">
+        <div class="poem-col">
             А хто ж гэта іх, не адзін мілён,<br>
             Крыўду несць навучыў, разбудзіў іх сон?<br><br>
             - Бяда, гора.<br><br>
@@ -879,9 +1027,9 @@
         «Ворагам» (1906)
     </h4>
 
-    <div style="display: grid; grid-template-columns: 1fr 2px 1fr 2px 1fr; gap: 0; background: rgba(255, 255, 255, 0.5); border-radius: 12px; padding: 20px 0; margin-bottom: 15px; border: 1px solid rgba(139, 42, 61, 0.15); font-family: 'Georgia', serif; font-size: 15px; line-height: 1.8; color: #333;">
+    <div class="poem-grid three">
 
-        <div style="padding: 0 15px;">
+        <div class="poem-col">
             Багачы і панства,<br>
             Нашы «дабрадзеі»!<br>
             Мы на суд вас клічам,<br>
@@ -900,9 +1048,9 @@
             Голадам марылі?
         </div>
 
-        <div style="width: 100%; height: 100%; min-height: 280px; background: var(--color-accent); opacity: 0.35; align-self: stretch;"></div>
+        <div class="poem-sep"></div>
 
-        <div style="padding: 0 15px;">
+        <div class="poem-col">
             Ласкаю ж чыёю<br>
             І з чые вы працы<br>
             Замкі збудавалі,<br>
@@ -925,9 +1073,9 @@
             Кожнаю парою?
         </div>
 
-        <div style="width: 100%; height: 100%; min-height: 280px; background: var(--color-accent); opacity: 0.35; align-self: stretch;"></div>
+        <div class="poem-sep"></div>
 
-        <div style="padding: 0 15px;">
+        <div class="poem-col">
             І чыя скацінка<br>
             Сохне ў пустым полі?<br>
             І як гаспадар той<br>
@@ -972,9 +1120,9 @@
         «Слуцкія ткачыхі» (1912)
     </h4>
 
-    <div style="display: grid; grid-template-columns: 1fr 2px 1fr 2px 1fr; gap: 0; background: rgba(255, 255, 255, 0.5); border-radius: 12px; padding: 20px 0; margin-bottom: 15px; border: 1px solid rgba(139, 42, 61, 0.15); font-family: 'Georgia', serif; font-size: 15px; line-height: 1.8; color: #333;">
+    <div class="poem-grid three">
         
-        <div style="padding: 0 15px;">
+        <div class="poem-col">
             Ад родных ніў, ад роднай хаты<br>
             У панскі двор дзеля красы<br>
             Яны, бяздольныя, узяты<br>
@@ -985,9 +1133,9 @@
             На лад персідскі ткуць яны.
         </div>
 
-        <div style="width: 100%; height: 100%; min-height: 280px; background: var(--color-accent); opacity: 0.35; align-self: stretch;"></div>
+        <div class="poem-sep"></div>
 
-        <div style="padding: 0 15px;">
+        <div class="poem-col">
             А за сцяной смяецца поле,<br>
             Зіяе неба з-за акна, -<br>
             І думкі мкнуцца мімаволі<br>
@@ -998,9 +1146,9 @@
             Між гор ліючайся ракі;
         </div>
 
-        <div style="width: 100%; height: 100%; min-height: 280px; background: var(--color-accent); opacity: 0.35; align-self: stretch;"></div>
+        <div class="poem-sep"></div>
 
-        <div style="padding: 0 15px;">
+        <div class="poem-col">
             Цямнее край зубчаты бора…<br>
             І тчэ, забыўшыся, рука,<br>
             Замест персідскага узора,<br>
@@ -1033,9 +1181,9 @@
         «Балада аб чатырох заложніках» (1942)
     </h4>
 
-    <div style="display: grid; grid-template-columns: 1fr 2px 1fr 2px 1fr; gap: 0; background: rgba(255, 255, 255, 0.5); border-radius: 12px; padding: 20px 0; margin-bottom: 15px; border: 1px solid rgba(139, 42, 61, 0.15); font-family: 'Georgia', serif; font-size: 15px; line-height: 1.8; color: #333;">
+    <div class="poem-grid three">
         
-        <div style="padding: 0 15px;">
+        <div class="poem-col">
             Іх вядуць па жытняй сцяжынцы.<br>
             Чатырох. Пад канвоем. З дому.<br>
             Чатырнаццаць - старэйшай дзяўчынцы,<br>
@@ -1054,9 +1202,9 @@
             Здацца ў рукі фашысцкім уладам.
         </div>
 
-        <div style="width: 100%; height: 100%; min-height: 280px; background: var(--color-accent); opacity: 0.35; align-self: stretch;"></div>
+        <div class="poem-sep"></div>
 
-        <div style="padding: 0 15px;">
+        <div class="poem-col">
             І вісіць той загад друкаваны<br>
             На Мінаевай хаце і клеці;<br>
             А не з'явіцца - расстраляны<br>
@@ -1075,9 +1223,9 @@
             Волю дасць, і мы пойдзем дадому...
         </div>
 
-        <div style="width: 100%; height: 100%; min-height: 280px; background: var(--color-accent); opacity: 0.35; align-self: stretch;"></div>
+        <div class="poem-sep"></div>
 
-        <div style="padding: 0 15px;">
+        <div class="poem-col">
             - А чаму не прыходзіць ён? Сыну<br>
             Цяжка ўсё растлумачыць адразу.<br>
             - Спі, засні, - суцяшае жанчына<br>
@@ -1373,7 +1521,7 @@
             Правулак быў вузенькі і зусім пусты. Валока паглядзеў у адзін канец яго, у другі і, сцяўшы пад пагонам рассечанае асколкам плячо, хістаючыся, пайшоў туды, адкуль беглі аўтаматчыкі. Угары, у ясным вясновым небе, бахала, сіпела, калацілася гулкае рэха бойкі.
         </p>
         <p style="text-align: justify; text-indent: 25px;">
-            «Што ж гэта? Як жа гэта?» - толькі цяпер акрэслілася ў яго галаве яшчэ няўцямная думка-здзіўленне. Узрушаны і змардаваны, ён нечага ніяк не мог сцяміць ці, можа, не мог чагосьці ўспомніць - разгарачаным нутром ён толькі адчуваў, што сталася вялікая, яшчэ не ўсвядомленая да канца несправядлівасць, перад магутнаю сілай якой і ён, і Фрыц Хагеман былі бездапаможнымі. I яму было вельмі пакутна ад таго і хацелася завыць ад крыўды, якая ашчаперыла і душыла яго.
+            «Што ж гэта? Як жа гэта?» - толькі цяпер акрэслілася ў яго галаве яшчэ няўцямная думка-здзіўленне. Узрушаны і змардаваны, ён нечага ніяк не мог сцяміць ці, можа, не мог чагосьці ўспомніць - разгарачаным нутром ён толькі адчуваў, што сталася вялікая, яшчэ не ўсвядомленая да канца несправядлівасць, перад магутнаю сілай якой і ён, і Фрыц Хагеман былі бездапаможныя. I яму было вельмі пакутна ад таго і хацелася завыць ад крыўды, якая ашчаперыла і душыла яго.
         </p>
     </div>
 
@@ -1402,9 +1550,9 @@
         «Бацькаўшчына»
     </h4>
 
-    <div style="display: grid; grid-template-columns: 1fr 2px 1fr 2px 1fr; gap: 0; background: rgba(255, 255, 255, 0.5); border-radius: 12px; padding: 20px 0; margin-bottom: 15px; border: 1px solid rgba(139, 42, 61, 0.15); font-family: 'Georgia', serif; font-size: 15px; line-height: 1.8; color: #333;">
+    <div class="poem-grid three">
 
-        <div style="padding: 0 15px;">
+        <div class="poem-col">
             Дагарэў за брамай небакрай,<br>
             Месяц паміж воблачкаў плыве.<br>
             Выйду зноў, як у мінулы май,<br>
@@ -1419,9 +1567,9 @@
             Прачышчае горла салавей.
         </div>
 
-        <div style="width: 100%; height: 100%; min-height: 280px; background: var(--color-accent); opacity: 0.35; align-self: stretch;"></div>
+        <div class="poem-sep"></div>
 
-        <div style="padding: 0 15px;">
+        <div class="poem-col">
             Лашчыцца трава да босых ног.<br>
             З дальніх паплавоў плыве ракой<br>
             Ледзь прыкметны сумны халадок -<br>
@@ -1436,9 +1584,9 @@
             Ссохлыя сцябліны палыноў.)
         </div>
 
-        <div style="width: 100%; height: 100%; min-height: 280px; background: var(--color-accent); opacity: 0.35; align-self: stretch;"></div>
+        <div class="poem-sep"></div>
 
-        <div style="padding: 0 15px;">
+        <div class="poem-col">
             Ціха цмокае у сне рака.<br>
             О, як добра, як прыгожа жыць!<br>
             Раска, як русалчына луска,<br>
@@ -1474,7 +1622,7 @@
             <div>
                 <h4>Разделы</h4>
                 <div class="footer-links-compact">
-                    <div><strong>Живопись:</strong> <a href="painting-19.html">XIX век</a>, <a href="painting-20.html">XX век</div>
+                    <div><strong>Живопись:</strong> <a href="painting-19.html">XIX век</a>, <a href="painting-20.html">XX век</a></div>
                     <div><strong>Театр:</strong> <a href="theater-19.html">XIX век</a>, <a href="theater-20.html">XX век</a></div>
                     
                  <div class="footer-links-row">
@@ -1488,7 +1636,7 @@
                 <div class="footer-links-row">
                     <a href="sources.html">Источники</a>
                     <span class="nav-separator">•</span>
-                    <a href="test.html">Тесты</a>
+                    <a href="tests.html">Тесты</a>
                 </div>
                 </div>
             </div>
